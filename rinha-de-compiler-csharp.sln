@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rinha-de-compiler-csharp", "rinha-de-compiler-csharp\rinha-de-compiler-csharp.csproj", "{7358D455-7144-4EF1-9B86-CD12857DC05E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "var", "var", "{A7689724-5E73-4E80-9736-19F319F9D067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rinha", "rinha", "{8754AF61-EB30-48E4-A484-FDED825F0A66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37090CD0-01DF-4A1E-9B7C-77A82FAF46AF}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{7F4F9BBE-43A4-4835-B19D-71F29180A64F}"
+	ProjectSection(SolutionItems) = preProject
+		var\rinha\files\combination.json = var\rinha\files\combination.json
+		var\rinha\files\combination.rinha = var\rinha\files\combination.rinha
+		var\rinha\files\fib.json = var\rinha\files\fib.json
+		var\rinha\files\fib.rinha = var\rinha\files\fib.rinha
+		var\rinha\files\sum.json = var\rinha\files\sum.json
+		var\rinha\files\sum.rinha = var\rinha\files\sum.rinha
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7358D455-7144-4EF1-9B86-CD12857DC05E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7358D455-7144-4EF1-9B86-CD12857DC05E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7358D455-7144-4EF1-9B86-CD12857DC05E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7358D455-7144-4EF1-9B86-CD12857DC05E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7689724-5E73-4E80-9736-19F319F9D067} = {37090CD0-01DF-4A1E-9B7C-77A82FAF46AF}
+		{8754AF61-EB30-48E4-A484-FDED825F0A66} = {A7689724-5E73-4E80-9736-19F319F9D067}
+		{7F4F9BBE-43A4-4835-B19D-71F29180A64F} = {8754AF61-EB30-48E4-A484-FDED825F0A66}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F02D8CF-D955-4292-A8EF-C2ED54A540CD}
+	EndGlobalSection
+EndGlobal
