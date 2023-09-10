@@ -1,10 +1,10 @@
-# Rinha de Compilers
+﻿# Rinha de Compilers
 
-Este compilador/interpretador ser� feito em C#
+Este compilador/interpretador será feito em C#
 
 ## Funcioonalidades implementadas
 
-1. Nenhuma (ainda) :)
+1. Nenhuma (ainda) 🙂
 
 ## Para executar
 
@@ -14,8 +14,8 @@ A realizar.
 
 A realizar
 
-#Links
+# Links
 
-[Twitter](https://twitter.com/lucaspsilveiras)
-[LinkedIn](https://www.linkedin.com/in/lucas-pachecos/)
-[Blog](https://lucaspacheco.dev/)
+[Twitter](https://twitter.com/lucaspsilveiras)  
+[LinkedIn](https://www.linkedin.com/in/lucas-pachecos/)  
+[Blog](https://lucaspacheco.dev/)  
