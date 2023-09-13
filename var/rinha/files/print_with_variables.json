@@ -1,0 +1,68 @@
+{
+    "name": "var/rinha/files/print_with_variables.rinha",
+    "expression": {
+        "kind": "Let",
+        "name": {
+            "text": "name",
+            "location": {
+                "start": 4,
+                "end": 8,
+                "filename": "var/rinha/files/print_with_variables.rinha"
+            }
+        },
+        "value": {
+            "kind": "Str",
+            "value": "Lucas with var.",
+            "location": {
+                "start": 11,
+                "end": 18,
+                "filename": "var/rinha/files/print_with_variables.rinha"
+            }
+        },
+        "next": {
+            "kind": "Print",
+            "value": {
+                "kind": "Binary",
+                "lhs": {
+                    "kind": "Str",
+                    "value": "Hello, ",
+                    "location": {
+                        "start": 26,
+                        "end": 35,
+                        "filename": "var/rinha/files/print_with_variables.rinha"
+                    }
+                },
+                "op": "Add",
+                "rhs": {
+                    "kind": "Var",
+                    "text": "name",
+                    "location": {
+                        "start": 38,
+                        "end": 42,
+                        "filename": "var/rinha/files/print_with_variables.rinha"
+                    }
+                },
+                "location": {
+                    "start": 26,
+                    "end": 42,
+                    "filename": "var/rinha/files/print_with_variables.rinha"
+                }
+            },
+            "location": {
+                "start": 20,
+                "end": 43,
+                "filename": "var/rinha/files/print_with_variables.rinha"
+            }
+        },
+        "location": {
+            "start": 0,
+            "end": 43,
+            "filename": "var/rinha/files/print_with_variables.rinha"
+        }
+    },
+    "location": {
+        "start": 0,
+        "end": 43,
+        "filename": "var/rinha/files/print_with_variables.rinha"
+    }
+}

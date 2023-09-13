@@ -7,7 +7,7 @@ Console.WriteLine("Hello, Rinheiros!");
 var stopWatch = new Stopwatch();
 stopWatch.Start();
 
-var fileName = "print.json";
+var fileName = "print_with_variables.json";
 var file = File.ReadAllText($"var/rinha/files/{fileName}");
 //var file = File.ReadAllText($"../var/rinha/files/{fileName}");
 var ast = JsonConvert.DeserializeObject<dynamic>(file);
