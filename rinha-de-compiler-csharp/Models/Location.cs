@@ -1,6 +1,6 @@
 ﻿namespace rinha_de_compiler_csharp.Models
 {
-    internal class Location
+    public class Location
     {
         public int Start { get; set; }
         public int End { get; set; }

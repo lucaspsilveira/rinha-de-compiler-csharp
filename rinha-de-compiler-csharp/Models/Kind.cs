@@ -1,6 +1,6 @@
 ﻿namespace rinha_de_compiler_csharp.Models
 {
-    internal enum Kind
+    public enum Kind
     {
         Int,
         Str,

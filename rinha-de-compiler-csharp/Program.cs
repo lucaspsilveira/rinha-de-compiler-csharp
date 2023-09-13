@@ -1,14 +1,26 @@
-﻿using rinha_de_compiler_csharp.Models;
-using System.Text.Json;
+﻿using Newtonsoft.Json;
+using rinha_de_compiler_csharp.Services;
+using System.Diagnostics;
 
 Console.WriteLine("Hello, Rinheiros!");
-var fileName = "fib.json";
+
+var stopWatch = new Stopwatch();
+stopWatch.Start();
+
+var fileName = "print.json";
 var file = File.ReadAllText($"var/rinha/files/{fileName}");
-Console.WriteLine(file);
-var ast = JsonSerializer.Deserialize<AST>(file, new JsonSerializerOptions { PropertyNameCaseInsensitive = true});
+//var file = File.ReadAllText($"../var/rinha/files/{fileName}");
+var ast = JsonConvert.DeserializeObject<dynamic>(file);
 if (ast is null)
 {
     Console.WriteLine("Não foi possível ler o seu arquivo.");
     Environment.Exit(1);
 }
-Console.WriteLine($"Lendo arquivo: {ast.Name}");
+Console.WriteLine($"Lendo arquivo: {ast.name}");
+
+Interpreter.Interpret(ast);
+
+stopWatch.Stop();
+
+Console.WriteLine($"Tempo de execução: {stopWatch.ElapsedMilliseconds} milissegundos.");
+Console.WriteLine($"Tempo de execução: {stopWatch.ElapsedMilliseconds / 1000f} segundos.");
