@@ -2,13 +2,23 @@
 
 Este compilador/interpretador será feito em C#
 
-## Funcioonalidades implementadas
+## Funcionalidades implementadas
 
 1. Nenhuma (ainda) 🙂
 
 ## Para executar
 
-A realizar.
+Navegue para a raiz do repositório.
+Execute:
+
+```
+docker build -t rinha-image -f Dockerfile .
+```
+
+Após, execute: 
+```
+docker run -it --rm rinha-image 
+```
 
 ## Para testar
 

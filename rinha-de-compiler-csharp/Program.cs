@@ -1,9 +1,9 @@
 ﻿using rinha_de_compiler_csharp.Models;
 using System.Text.Json;
 
-Console.WriteLine("Hello, Rinha!");
+Console.WriteLine("Hello, Rinheiros!");
 var fileName = "fib.json";
-var file = File.ReadAllText($"../../../../var/rinha/files/{fileName}");
+var file = File.ReadAllText($"var/rinha/files/{fileName}");
 Console.WriteLine(file);
 var ast = JsonSerializer.Deserialize<AST>(file, new JsonSerializerOptions { PropertyNameCaseInsensitive = true});
 if (ast is null)
