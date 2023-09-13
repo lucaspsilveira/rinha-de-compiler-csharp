@@ -1,0 +1,111 @@
+{
+    "name": "var/rinha/files/print_with_multiple_variables.rinha",
+    "expression": {
+        "kind": "Let",
+        "name": {
+            "text": "name",
+            "location": {
+                "start": 4,
+                "end": 8,
+                "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+            }
+        },
+        "value": {
+            "kind": "Str",
+            "value": "Lucas with",
+            "location": {
+                "start": 11,
+                "end": 23,
+                "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+            }
+        },
+        "next": {
+            "kind": "Let",
+            "name": {
+                "text": "surname",
+                "location": {
+                    "start": 29,
+                    "end": 36,
+                    "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                }
+            },
+            "value": {
+                "kind": "Str",
+                "value": " multiple vars.",
+                "location": {
+                    "start": 39,
+                    "end": 56,
+                    "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                }
+            },
+            "next": {
+                "kind": "Print",
+                "value": {
+                    "kind": "Binary",
+                    "lhs": {
+                        "kind": "Str",
+                        "value": "Hello, ",
+                        "location": {
+                            "start": 64,
+                            "end": 73,
+                            "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                        }
+                    },
+                    "op": "Add",
+                    "rhs": {
+                        "kind": "Binary",
+                        "lhs": {
+                            "kind": "Var",
+                            "text": "name",
+                            "location": {
+                                "start": 76,
+                                "end": 80,
+                                "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                            }
+                        },
+                        "op": "Add",
+                        "rhs": {
+                            "kind": "Var",
+                            "text": "surname",
+                            "location": {
+                                "start": 83,
+                                "end": 90,
+                                "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                            }
+                        },
+                        "location": {
+                            "start": 76,
+                            "end": 90,
+                            "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 64,
+                        "end": 90,
+                        "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                    }
+                },
+                "location": {
+                    "start": 58,
+                    "end": 91,
+                    "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+                }
+            },
+            "location": {
+                "start": 25,
+                "end": 91,
+                "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+            }
+        },
+        "location": {
+            "start": 0,
+            "end": 91,
+            "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+        }
+    },
+    "location": {
+        "start": 0,
+        "end": 91,
+        "filename": "var/rinha/files/print_with_multiple_variables.rinha"
+    }
+}
