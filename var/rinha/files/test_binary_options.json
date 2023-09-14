@@ -1,0 +1,1214 @@
+{
+    "name": "var/rinha/files/test_binary_options.rinha",
+    "expression": {
+        "kind": "Let",
+        "name": {
+            "text": "soma",
+            "location": {
+                "start": 4,
+                "end": 8,
+                "filename": "var/rinha/files/test_binary_options.rinha"
+            }
+        },
+        "value": {
+            "kind": "Binary",
+            "lhs": {
+                "kind": "Int",
+                "value": 4,
+                "location": {
+                    "start": 11,
+                    "end": 12,
+                    "filename": "var/rinha/files/test_binary_options.rinha"
+                }
+            },
+            "op": "Add",
+            "rhs": {
+                "kind": "Int",
+                "value": 6,
+                "location": {
+                    "start": 15,
+                    "end": 16,
+                    "filename": "var/rinha/files/test_binary_options.rinha"
+                }
+            },
+            "location": {
+                "start": 11,
+                "end": 16,
+                "filename": "var/rinha/files/test_binary_options.rinha"
+            }
+        },
+        "next": {
+            "kind": "Let",
+            "name": {
+                "text": "subt",
+                "location": {
+                    "start": 22,
+                    "end": 26,
+                    "filename": "var/rinha/files/test_binary_options.rinha"
+                }
+            },
+            "value": {
+                "kind": "Binary",
+                "lhs": {
+                    "kind": "Int",
+                    "value": 4,
+                    "location": {
+                        "start": 29,
+                        "end": 30,
+                        "filename": "var/rinha/files/test_binary_options.rinha"
+                    }
+                },
+                "op": "Sub",
+                "rhs": {
+                    "kind": "Int",
+                    "value": 6,
+                    "location": {
+                        "start": 33,
+                        "end": 34,
+                        "filename": "var/rinha/files/test_binary_options.rinha"
+                    }
+                },
+                "location": {
+                    "start": 29,
+                    "end": 34,
+                    "filename": "var/rinha/files/test_binary_options.rinha"
+                }
+            },
+            "next": {
+                "kind": "Let",
+                "name": {
+                    "text": "div",
+                    "location": {
+                        "start": 40,
+                        "end": 43,
+                        "filename": "var/rinha/files/test_binary_options.rinha"
+                    }
+                },
+                "value": {
+                    "kind": "Binary",
+                    "lhs": {
+                        "kind": "Int",
+                        "value": 10,
+                        "location": {
+                            "start": 46,
+                            "end": 48,
+                            "filename": "var/rinha/files/test_binary_options.rinha"
+                        }
+                    },
+                    "op": "Div",
+                    "rhs": {
+                        "kind": "Int",
+                        "value": 2,
+                        "location": {
+                            "start": 51,
+                            "end": 52,
+                            "filename": "var/rinha/files/test_binary_options.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 46,
+                        "end": 52,
+                        "filename": "var/rinha/files/test_binary_options.rinha"
+                    }
+                },
+                "next": {
+                    "kind": "Let",
+                    "name": {
+                        "text": "res",
+                        "location": {
+                            "start": 58,
+                            "end": 61,
+                            "filename": "var/rinha/files/test_binary_options.rinha"
+                        }
+                    },
+                    "value": {
+                        "kind": "Binary",
+                        "lhs": {
+                            "kind": "Int",
+                            "value": 13,
+                            "location": {
+                                "start": 64,
+                                "end": 66,
+                                "filename": "var/rinha/files/test_binary_options.rinha"
+                            }
+                        },
+                        "op": "Rem",
+                        "rhs": {
+                            "kind": "Int",
+                            "value": 2,
+                            "location": {
+                                "start": 69,
+                                "end": 70,
+                                "filename": "var/rinha/files/test_binary_options.rinha"
+                            }
+                        },
+                        "location": {
+                            "start": 64,
+                            "end": 70,
+                            "filename": "var/rinha/files/test_binary_options.rinha"
+                        }
+                    },
+                    "next": {
+                        "kind": "Let",
+                        "name": {
+                            "text": "mul",
+                            "location": {
+                                "start": 76,
+                                "end": 79,
+                                "filename": "var/rinha/files/test_binary_options.rinha"
+                            }
+                        },
+                        "value": {
+                            "kind": "Binary",
+                            "lhs": {
+                                "kind": "Int",
+                                "value": 12,
+                                "location": {
+                                    "start": 82,
+                                    "end": 84,
+                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                }
+                            },
+                            "op": "Mul",
+                            "rhs": {
+                                "kind": "Int",
+                                "value": 2,
+                                "location": {
+                                    "start": 87,
+                                    "end": 88,
+                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                }
+                            },
+                            "location": {
+                                "start": 82,
+                                "end": 88,
+                                "filename": "var/rinha/files/test_binary_options.rinha"
+                            }
+                        },
+                        "next": {
+                            "kind": "Let",
+                            "name": {
+                                "text": "eq",
+                                "location": {
+                                    "start": 94,
+                                    "end": 96,
+                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                }
+                            },
+                            "value": {
+                                "kind": "Binary",
+                                "lhs": {
+                                    "kind": "Int",
+                                    "value": 12,
+                                    "location": {
+                                        "start": 99,
+                                        "end": 101,
+                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                    }
+                                },
+                                "op": "Eq",
+                                "rhs": {
+                                    "kind": "Int",
+                                    "value": 12,
+                                    "location": {
+                                        "start": 105,
+                                        "end": 107,
+                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                    }
+                                },
+                                "location": {
+                                    "start": 99,
+                                    "end": 107,
+                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                }
+                            },
+                            "next": {
+                                "kind": "Let",
+                                "name": {
+                                    "text": "neq",
+                                    "location": {
+                                        "start": 113,
+                                        "end": 116,
+                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                    }
+                                },
+                                "value": {
+                                    "kind": "Binary",
+                                    "lhs": {
+                                        "kind": "Int",
+                                        "value": 12,
+                                        "location": {
+                                            "start": 119,
+                                            "end": 121,
+                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                        }
+                                    },
+                                    "op": "Neq",
+                                    "rhs": {
+                                        "kind": "Int",
+                                        "value": 112,
+                                        "location": {
+                                            "start": 125,
+                                            "end": 128,
+                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                        }
+                                    },
+                                    "location": {
+                                        "start": 119,
+                                        "end": 128,
+                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                    }
+                                },
+                                "next": {
+                                    "kind": "Let",
+                                    "name": {
+                                        "text": "lt",
+                                        "location": {
+                                            "start": 134,
+                                            "end": 136,
+                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                        }
+                                    },
+                                    "value": {
+                                        "kind": "Binary",
+                                        "lhs": {
+                                            "kind": "Int",
+                                            "value": 12,
+                                            "location": {
+                                                "start": 139,
+                                                "end": 141,
+                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                            }
+                                        },
+                                        "op": "Lt",
+                                        "rhs": {
+                                            "kind": "Int",
+                                            "value": 112,
+                                            "location": {
+                                                "start": 144,
+                                                "end": 147,
+                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                            }
+                                        },
+                                        "location": {
+                                            "start": 139,
+                                            "end": 147,
+                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                        }
+                                    },
+                                    "next": {
+                                        "kind": "Let",
+                                        "name": {
+                                            "text": "lte",
+                                            "location": {
+                                                "start": 153,
+                                                "end": 156,
+                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                            }
+                                        },
+                                        "value": {
+                                            "kind": "Binary",
+                                            "lhs": {
+                                                "kind": "Int",
+                                                "value": 12,
+                                                "location": {
+                                                    "start": 159,
+                                                    "end": 161,
+                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                }
+                                            },
+                                            "op": "Lte",
+                                            "rhs": {
+                                                "kind": "Int",
+                                                "value": 12,
+                                                "location": {
+                                                    "start": 165,
+                                                    "end": 167,
+                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                }
+                                            },
+                                            "location": {
+                                                "start": 159,
+                                                "end": 167,
+                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                            }
+                                        },
+                                        "next": {
+                                            "kind": "Let",
+                                            "name": {
+                                                "text": "gt",
+                                                "location": {
+                                                    "start": 173,
+                                                    "end": 175,
+                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                }
+                                            },
+                                            "value": {
+                                                "kind": "Binary",
+                                                "lhs": {
+                                                    "kind": "Int",
+                                                    "value": 12,
+                                                    "location": {
+                                                        "start": 178,
+                                                        "end": 180,
+                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                    }
+                                                },
+                                                "op": "Gt",
+                                                "rhs": {
+                                                    "kind": "Int",
+                                                    "value": 112,
+                                                    "location": {
+                                                        "start": 183,
+                                                        "end": 186,
+                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                    }
+                                                },
+                                                "location": {
+                                                    "start": 178,
+                                                    "end": 186,
+                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                }
+                                            },
+                                            "next": {
+                                                "kind": "Let",
+                                                "name": {
+                                                    "text": "gte",
+                                                    "location": {
+                                                        "start": 192,
+                                                        "end": 195,
+                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                    }
+                                                },
+                                                "value": {
+                                                    "kind": "Binary",
+                                                    "lhs": {
+                                                        "kind": "Int",
+                                                        "value": 12,
+                                                        "location": {
+                                                            "start": 198,
+                                                            "end": 200,
+                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                        }
+                                                    },
+                                                    "op": "Gte",
+                                                    "rhs": {
+                                                        "kind": "Int",
+                                                        "value": 12,
+                                                        "location": {
+                                                            "start": 204,
+                                                            "end": 206,
+                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                        }
+                                                    },
+                                                    "location": {
+                                                        "start": 198,
+                                                        "end": 206,
+                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                    }
+                                                },
+                                                "next": {
+                                                    "kind": "Let",
+                                                    "name": {
+                                                        "text": "and",
+                                                        "location": {
+                                                            "start": 212,
+                                                            "end": 215,
+                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                        }
+                                                    },
+                                                    "value": {
+                                                        "kind": "Binary",
+                                                        "lhs": {
+                                                            "kind": "Bool",
+                                                            "value": true,
+                                                            "location": {
+                                                                "start": 218,
+                                                                "end": 222,
+                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                            }
+                                                        },
+                                                        "op": "And",
+                                                        "rhs": {
+                                                            "kind": "Bool",
+                                                            "value": false,
+                                                            "location": {
+                                                                "start": 226,
+                                                                "end": 231,
+                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                            }
+                                                        },
+                                                        "location": {
+                                                            "start": 218,
+                                                            "end": 231,
+                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                        }
+                                                    },
+                                                    "next": {
+                                                        "kind": "Let",
+                                                        "name": {
+                                                            "text": "or",
+                                                            "location": {
+                                                                "start": 237,
+                                                                "end": 239,
+                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "kind": "Binary",
+                                                            "lhs": {
+                                                                "kind": "Bool",
+                                                                "value": true,
+                                                                "location": {
+                                                                    "start": 242,
+                                                                    "end": 246,
+                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                }
+                                                            },
+                                                            "op": "Or",
+                                                            "rhs": {
+                                                                "kind": "Bool",
+                                                                "value": false,
+                                                                "location": {
+                                                                    "start": 250,
+                                                                    "end": 255,
+                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                }
+                                                            },
+                                                            "location": {
+                                                                "start": 242,
+                                                                "end": 255,
+                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "kind": "Let",
+                                                            "name": {
+                                                                "text": "_",
+                                                                "location": {
+                                                                    "start": 261,
+                                                                    "end": 262,
+                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                }
+                                                            },
+                                                            "value": {
+                                                                "kind": "Print",
+                                                                "value": {
+                                                                    "kind": "Binary",
+                                                                    "lhs": {
+                                                                        "kind": "Str",
+                                                                        "value": "Soma: ",
+                                                                        "location": {
+                                                                            "start": 271,
+                                                                            "end": 279,
+                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                        }
+                                                                    },
+                                                                    "op": "Add",
+                                                                    "rhs": {
+                                                                        "kind": "Var",
+                                                                        "text": "soma",
+                                                                        "location": {
+                                                                            "start": 282,
+                                                                            "end": 286,
+                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                        }
+                                                                    },
+                                                                    "location": {
+                                                                        "start": 271,
+                                                                        "end": 286,
+                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                    }
+                                                                },
+                                                                "location": {
+                                                                    "start": 265,
+                                                                    "end": 287,
+                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                }
+                                                            },
+                                                            "next": {
+                                                                "kind": "Let",
+                                                                "name": {
+                                                                    "text": "_",
+                                                                    "location": {
+                                                                        "start": 293,
+                                                                        "end": 294,
+                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                    }
+                                                                },
+                                                                "value": {
+                                                                    "kind": "Print",
+                                                                    "value": {
+                                                                        "kind": "Binary",
+                                                                        "lhs": {
+                                                                            "kind": "Str",
+                                                                            "value": "Subtração: ",
+                                                                            "location": {
+                                                                                "start": 303,
+                                                                                "end": 318,
+                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                            }
+                                                                        },
+                                                                        "op": "Add",
+                                                                        "rhs": {
+                                                                            "kind": "Var",
+                                                                            "text": "subt",
+                                                                            "location": {
+                                                                                "start": 321,
+                                                                                "end": 325,
+                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                            }
+                                                                        },
+                                                                        "location": {
+                                                                            "start": 303,
+                                                                            "end": 325,
+                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                        }
+                                                                    },
+                                                                    "location": {
+                                                                        "start": 297,
+                                                                        "end": 326,
+                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "kind": "Let",
+                                                                    "name": {
+                                                                        "text": "_",
+                                                                        "location": {
+                                                                            "start": 332,
+                                                                            "end": 333,
+                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                        }
+                                                                    },
+                                                                    "value": {
+                                                                        "kind": "Print",
+                                                                        "value": {
+                                                                            "kind": "Binary",
+                                                                            "lhs": {
+                                                                                "kind": "Str",
+                                                                                "value": "Divisão: ",
+                                                                                "location": {
+                                                                                    "start": 342,
+                                                                                    "end": 354,
+                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                }
+                                                                            },
+                                                                            "op": "Add",
+                                                                            "rhs": {
+                                                                                "kind": "Var",
+                                                                                "text": "div",
+                                                                                "location": {
+                                                                                    "start": 357,
+                                                                                    "end": 360,
+                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                }
+                                                                            },
+                                                                            "location": {
+                                                                                "start": 342,
+                                                                                "end": 360,
+                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                            }
+                                                                        },
+                                                                        "location": {
+                                                                            "start": 336,
+                                                                            "end": 361,
+                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                        }
+                                                                    },
+                                                                    "next": {
+                                                                        "kind": "Let",
+                                                                        "name": {
+                                                                            "text": "_",
+                                                                            "location": {
+                                                                                "start": 367,
+                                                                                "end": 368,
+                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                            }
+                                                                        },
+                                                                        "value": {
+                                                                            "kind": "Print",
+                                                                            "value": {
+                                                                                "kind": "Binary",
+                                                                                "lhs": {
+                                                                                    "kind": "Str",
+                                                                                    "value": "Resto: ",
+                                                                                    "location": {
+                                                                                        "start": 377,
+                                                                                        "end": 386,
+                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                    }
+                                                                                },
+                                                                                "op": "Add",
+                                                                                "rhs": {
+                                                                                    "kind": "Var",
+                                                                                    "text": "res",
+                                                                                    "location": {
+                                                                                        "start": 389,
+                                                                                        "end": 392,
+                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                    }
+                                                                                },
+                                                                                "location": {
+                                                                                    "start": 377,
+                                                                                    "end": 392,
+                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                }
+                                                                            },
+                                                                            "location": {
+                                                                                "start": 371,
+                                                                                "end": 393,
+                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                            }
+                                                                        },
+                                                                        "next": {
+                                                                            "kind": "Let",
+                                                                            "name": {
+                                                                                "text": "_",
+                                                                                "location": {
+                                                                                    "start": 399,
+                                                                                    "end": 400,
+                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                }
+                                                                            },
+                                                                            "value": {
+                                                                                "kind": "Print",
+                                                                                "value": {
+                                                                                    "kind": "Binary",
+                                                                                    "lhs": {
+                                                                                        "kind": "Str",
+                                                                                        "value": "Mul: ",
+                                                                                        "location": {
+                                                                                            "start": 409,
+                                                                                            "end": 416,
+                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                        }
+                                                                                    },
+                                                                                    "op": "Add",
+                                                                                    "rhs": {
+                                                                                        "kind": "Var",
+                                                                                        "text": "mul",
+                                                                                        "location": {
+                                                                                            "start": 419,
+                                                                                            "end": 422,
+                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                        }
+                                                                                    },
+                                                                                    "location": {
+                                                                                        "start": 409,
+                                                                                        "end": 422,
+                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                    }
+                                                                                },
+                                                                                "location": {
+                                                                                    "start": 403,
+                                                                                    "end": 423,
+                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "kind": "Let",
+                                                                                "name": {
+                                                                                    "text": "_",
+                                                                                    "location": {
+                                                                                        "start": 429,
+                                                                                        "end": 430,
+                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                    }
+                                                                                },
+                                                                                "value": {
+                                                                                    "kind": "Print",
+                                                                                    "value": {
+                                                                                        "kind": "Binary",
+                                                                                        "lhs": {
+                                                                                            "kind": "Str",
+                                                                                            "value": "Eq: ",
+                                                                                            "location": {
+                                                                                                "start": 439,
+                                                                                                "end": 445,
+                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                            }
+                                                                                        },
+                                                                                        "op": "Add",
+                                                                                        "rhs": {
+                                                                                            "kind": "Var",
+                                                                                            "text": "eq",
+                                                                                            "location": {
+                                                                                                "start": 448,
+                                                                                                "end": 450,
+                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                            }
+                                                                                        },
+                                                                                        "location": {
+                                                                                            "start": 439,
+                                                                                            "end": 450,
+                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                        }
+                                                                                    },
+                                                                                    "location": {
+                                                                                        "start": 433,
+                                                                                        "end": 451,
+                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                    }
+                                                                                },
+                                                                                "next": {
+                                                                                    "kind": "Let",
+                                                                                    "name": {
+                                                                                        "text": "_",
+                                                                                        "location": {
+                                                                                            "start": 457,
+                                                                                            "end": 458,
+                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                        }
+                                                                                    },
+                                                                                    "value": {
+                                                                                        "kind": "Print",
+                                                                                        "value": {
+                                                                                            "kind": "Binary",
+                                                                                            "lhs": {
+                                                                                                "kind": "Str",
+                                                                                                "value": "Neq: ",
+                                                                                                "location": {
+                                                                                                    "start": 467,
+                                                                                                    "end": 474,
+                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                }
+                                                                                            },
+                                                                                            "op": "Add",
+                                                                                            "rhs": {
+                                                                                                "kind": "Var",
+                                                                                                "text": "neq",
+                                                                                                "location": {
+                                                                                                    "start": 477,
+                                                                                                    "end": 480,
+                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                }
+                                                                                            },
+                                                                                            "location": {
+                                                                                                "start": 467,
+                                                                                                "end": 480,
+                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                            }
+                                                                                        },
+                                                                                        "location": {
+                                                                                            "start": 461,
+                                                                                            "end": 481,
+                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                        }
+                                                                                    },
+                                                                                    "next": {
+                                                                                        "kind": "Let",
+                                                                                        "name": {
+                                                                                            "text": "_",
+                                                                                            "location": {
+                                                                                                "start": 487,
+                                                                                                "end": 488,
+                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                            }
+                                                                                        },
+                                                                                        "value": {
+                                                                                            "kind": "Print",
+                                                                                            "value": {
+                                                                                                "kind": "Binary",
+                                                                                                "lhs": {
+                                                                                                    "kind": "Str",
+                                                                                                    "value": "lt: ",
+                                                                                                    "location": {
+                                                                                                        "start": 497,
+                                                                                                        "end": 503,
+                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                    }
+                                                                                                },
+                                                                                                "op": "Add",
+                                                                                                "rhs": {
+                                                                                                    "kind": "Var",
+                                                                                                    "text": "lt",
+                                                                                                    "location": {
+                                                                                                        "start": 506,
+                                                                                                        "end": 508,
+                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                    }
+                                                                                                },
+                                                                                                "location": {
+                                                                                                    "start": 497,
+                                                                                                    "end": 508,
+                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                }
+                                                                                            },
+                                                                                            "location": {
+                                                                                                "start": 491,
+                                                                                                "end": 509,
+                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                            }
+                                                                                        },
+                                                                                        "next": {
+                                                                                            "kind": "Let",
+                                                                                            "name": {
+                                                                                                "text": "_",
+                                                                                                "location": {
+                                                                                                    "start": 515,
+                                                                                                    "end": 516,
+                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                }
+                                                                                            },
+                                                                                            "value": {
+                                                                                                "kind": "Print",
+                                                                                                "value": {
+                                                                                                    "kind": "Binary",
+                                                                                                    "lhs": {
+                                                                                                        "kind": "Str",
+                                                                                                        "value": "lte: ",
+                                                                                                        "location": {
+                                                                                                            "start": 525,
+                                                                                                            "end": 532,
+                                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "op": "Add",
+                                                                                                    "rhs": {
+                                                                                                        "kind": "Var",
+                                                                                                        "text": "lte",
+                                                                                                        "location": {
+                                                                                                            "start": 535,
+                                                                                                            "end": 538,
+                                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "location": {
+                                                                                                        "start": 525,
+                                                                                                        "end": 538,
+                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                    }
+                                                                                                },
+                                                                                                "location": {
+                                                                                                    "start": 519,
+                                                                                                    "end": 539,
+                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                }
+                                                                                            },
+                                                                                            "next": {
+                                                                                                "kind": "Let",
+                                                                                                "name": {
+                                                                                                    "text": "_",
+                                                                                                    "location": {
+                                                                                                        "start": 545,
+                                                                                                        "end": 546,
+                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                    }
+                                                                                                },
+                                                                                                "value": {
+                                                                                                    "kind": "Print",
+                                                                                                    "value": {
+                                                                                                        "kind": "Binary",
+                                                                                                        "lhs": {
+                                                                                                            "kind": "Str",
+                                                                                                            "value": "gt: ",
+                                                                                                            "location": {
+                                                                                                                "start": 555,
+                                                                                                                "end": 561,
+                                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "op": "Add",
+                                                                                                        "rhs": {
+                                                                                                            "kind": "Var",
+                                                                                                            "text": "gt",
+                                                                                                            "location": {
+                                                                                                                "start": 564,
+                                                                                                                "end": 566,
+                                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "location": {
+                                                                                                            "start": 555,
+                                                                                                            "end": 566,
+                                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "location": {
+                                                                                                        "start": 549,
+                                                                                                        "end": 567,
+                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                    }
+                                                                                                },
+                                                                                                "next": {
+                                                                                                    "kind": "Let",
+                                                                                                    "name": {
+                                                                                                        "text": "_",
+                                                                                                        "location": {
+                                                                                                            "start": 573,
+                                                                                                            "end": 574,
+                                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "value": {
+                                                                                                        "kind": "Print",
+                                                                                                        "value": {
+                                                                                                            "kind": "Binary",
+                                                                                                            "lhs": {
+                                                                                                                "kind": "Str",
+                                                                                                                "value": "gte: ",
+                                                                                                                "location": {
+                                                                                                                    "start": 583,
+                                                                                                                    "end": 590,
+                                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "op": "Add",
+                                                                                                            "rhs": {
+                                                                                                                "kind": "Var",
+                                                                                                                "text": "gte",
+                                                                                                                "location": {
+                                                                                                                    "start": 593,
+                                                                                                                    "end": 596,
+                                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "location": {
+                                                                                                                "start": 583,
+                                                                                                                "end": 596,
+                                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "location": {
+                                                                                                            "start": 577,
+                                                                                                            "end": 597,
+                                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "next": {
+                                                                                                        "kind": "Let",
+                                                                                                        "name": {
+                                                                                                            "text": "_",
+                                                                                                            "location": {
+                                                                                                                "start": 603,
+                                                                                                                "end": 604,
+                                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "value": {
+                                                                                                            "kind": "Print",
+                                                                                                            "value": {
+                                                                                                                "kind": "Binary",
+                                                                                                                "lhs": {
+                                                                                                                    "kind": "Str",
+                                                                                                                    "value": "and: ",
+                                                                                                                    "location": {
+                                                                                                                        "start": 613,
+                                                                                                                        "end": 620,
+                                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                "op": "Add",
+                                                                                                                "rhs": {
+                                                                                                                    "kind": "Var",
+                                                                                                                    "text": "and",
+                                                                                                                    "location": {
+                                                                                                                        "start": 623,
+                                                                                                                        "end": 626,
+                                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                "location": {
+                                                                                                                    "start": 613,
+                                                                                                                    "end": 626,
+                                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "location": {
+                                                                                                                "start": 607,
+                                                                                                                "end": 627,
+                                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "next": {
+                                                                                                            "kind": "Print",
+                                                                                                            "value": {
+                                                                                                                "kind": "Binary",
+                                                                                                                "lhs": {
+                                                                                                                    "kind": "Str",
+                                                                                                                    "value": "Or: ",
+                                                                                                                    "location": {
+                                                                                                                        "start": 635,
+                                                                                                                        "end": 641,
+                                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                "op": "Add",
+                                                                                                                "rhs": {
+                                                                                                                    "kind": "Var",
+                                                                                                                    "text": "or",
+                                                                                                                    "location": {
+                                                                                                                        "start": 644,
+                                                                                                                        "end": 646,
+                                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                "location": {
+                                                                                                                    "start": 635,
+                                                                                                                    "end": 646,
+                                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "location": {
+                                                                                                                "start": 629,
+                                                                                                                "end": 647,
+                                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "location": {
+                                                                                                            "start": 599,
+                                                                                                            "end": 647,
+                                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "location": {
+                                                                                                        "start": 569,
+                                                                                                        "end": 647,
+                                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                    }
+                                                                                                },
+                                                                                                "location": {
+                                                                                                    "start": 541,
+                                                                                                    "end": 647,
+                                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                                }
+                                                                                            },
+                                                                                            "location": {
+                                                                                                "start": 511,
+                                                                                                "end": 647,
+                                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                            }
+                                                                                        },
+                                                                                        "location": {
+                                                                                            "start": 483,
+                                                                                            "end": 647,
+                                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                        }
+                                                                                    },
+                                                                                    "location": {
+                                                                                        "start": 453,
+                                                                                        "end": 647,
+                                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                    }
+                                                                                },
+                                                                                "location": {
+                                                                                    "start": 425,
+                                                                                    "end": 647,
+                                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                                }
+                                                                            },
+                                                                            "location": {
+                                                                                "start": 395,
+                                                                                "end": 647,
+                                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                            }
+                                                                        },
+                                                                        "location": {
+                                                                            "start": 363,
+                                                                            "end": 647,
+                                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                        }
+                                                                    },
+                                                                    "location": {
+                                                                        "start": 328,
+                                                                        "end": 647,
+                                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                    }
+                                                                },
+                                                                "location": {
+                                                                    "start": 289,
+                                                                    "end": 647,
+                                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                                }
+                                                            },
+                                                            "location": {
+                                                                "start": 257,
+                                                                "end": 647,
+                                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                                            }
+                                                        },
+                                                        "location": {
+                                                            "start": 233,
+                                                            "end": 647,
+                                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                                        }
+                                                    },
+                                                    "location": {
+                                                        "start": 208,
+                                                        "end": 647,
+                                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                                    }
+                                                },
+                                                "location": {
+                                                    "start": 188,
+                                                    "end": 647,
+                                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                                }
+                                            },
+                                            "location": {
+                                                "start": 169,
+                                                "end": 647,
+                                                "filename": "var/rinha/files/test_binary_options.rinha"
+                                            }
+                                        },
+                                        "location": {
+                                            "start": 149,
+                                            "end": 647,
+                                            "filename": "var/rinha/files/test_binary_options.rinha"
+                                        }
+                                    },
+                                    "location": {
+                                        "start": 130,
+                                        "end": 647,
+                                        "filename": "var/rinha/files/test_binary_options.rinha"
+                                    }
+                                },
+                                "location": {
+                                    "start": 109,
+                                    "end": 647,
+                                    "filename": "var/rinha/files/test_binary_options.rinha"
+                                }
+                            },
+                            "location": {
+                                "start": 90,
+                                "end": 647,
+                                "filename": "var/rinha/files/test_binary_options.rinha"
+                            }
+                        },
+                        "location": {
+                            "start": 72,
+                            "end": 647,
+                            "filename": "var/rinha/files/test_binary_options.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 54,
+                        "end": 647,
+                        "filename": "var/rinha/files/test_binary_options.rinha"
+                    }
+                },
+                "location": {
+                    "start": 36,
+                    "end": 647,
+                    "filename": "var/rinha/files/test_binary_options.rinha"
+                }
+            },
+            "location": {
+                "start": 18,
+                "end": 647,
+                "filename": "var/rinha/files/test_binary_options.rinha"
+            }
+        },
+        "location": {
+            "start": 0,
+            "end": 647,
+            "filename": "var/rinha/files/test_binary_options.rinha"
+        }
+    },
+    "location": {
+        "start": 0,
+        "end": 647,
+        "filename": "var/rinha/files/test_binary_options.rinha"
+    }
+}

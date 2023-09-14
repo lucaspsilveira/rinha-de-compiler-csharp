@@ -7,7 +7,7 @@ Console.WriteLine("Hello, Rinheiros!");
 var stopWatch = new Stopwatch();
 stopWatch.Start();
 
-var fileName = "print_with_multiple_variables.json";
+var fileName = "test_binary_options.json";
 var file = File.ReadAllText($"var/rinha/files/{fileName}");
 //var file = File.ReadAllText($"../var/rinha/files/{fileName}");
 var ast = JsonConvert.DeserializeObject<dynamic>(file);

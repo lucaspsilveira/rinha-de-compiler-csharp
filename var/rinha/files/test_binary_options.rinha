@@ -1,0 +1,26 @@
+let soma = 4 + 6;
+let subt = 4 - 6;
+let div = 10 / 2;
+let res = 13 % 2;
+let mul = 12 * 2;
+let eq = 12 == 12;
+let neq = 12 != 112;
+let lt = 12 < 112;
+let lte = 12 <= 12;
+let gt = 12 > 112;
+let gte = 12 >= 12;
+let and = true && false;
+let or = true || false;
+let _ = print("Soma: " + soma);
+let _ = print("Subtração: " + subt);
+let _ = print("Divisão: " + div);
+let _ = print("Resto: " + res);
+let _ = print("Mul: " + mul);
+let _ = print("Eq: " + eq);
+let _ = print("Neq: " + neq);
+let _ = print("lt: " + lt);
+let _ = print("lte: " + lte);
+let _ = print("gt: " + gt);
+let _ = print("gte: " + gte);
+let _ = print("and: " + and);
+print("Or: " + or)
