@@ -1,29 +1,17 @@
-using rinha_de_compiler_csharp.Models;
-using System.Linq;
-using System.Net;
-
 namespace rinha_de_compiler_csharp.Services 
 {
     public class Interpreter
     {
-        public Interpreter() {}
-
-        public static void Interpret(dynamic ast) {
-            //Console.WriteLine("Expression: "+ ast.expression);
-            Evaluate(ast.expression, new Dictionary<string, dynamic>());
-            // Evaluate(ast.expression, new Stack<dynamic>());
-        }
+        public static void Interpret(dynamic ast) => Evaluate(ast.expression, new Dictionary<string, dynamic>());
 
         private static dynamic? Evaluate(dynamic expression,  Dictionary<string, dynamic> memory) {
             switch (expression.kind.ToString()) {
                 case "Let":
                     if (expression.value.kind == "Function") {
                         memory[expression.name.text.ToString()] = expression.value;
-                        // memory.Push(expression.value);
                         break;
                     }
                     memory[expression.name.text.ToString()] = Evaluate(expression.value, memory);
-                    // memory.Push(Evaluate(expression.value, memory));
                     break;
                 case "Function":
                     return Evaluate(expression.value, memory);
@@ -54,15 +42,9 @@ namespace rinha_de_compiler_csharp.Services
                         return Evaluate(expression.otherwise, memory);
                 case "Var":
                     return memory[expression.text.ToString()];
-                    //    return memory.Pop();
                 case "Binary":
                     var lhs = Evaluate(expression.lhs, memory);
                     var rhs = Evaluate(expression.rhs, memory);
-                    
-                    // if (expression.lhs.kind == "Int")
-                    //     lhs = int.Parse(lhs.ToString());
-                    // if (expression.rhs.kind == "Int")
-                    //     rhs = int.Parse(rhs.ToString());
 
                     return expression.op.ToString() switch
                     {
