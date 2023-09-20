@@ -7,8 +7,8 @@ Console.WriteLine("Hello, Rinheiros!");
 var stopWatch = new Stopwatch();
 stopWatch.Start();
 
-// var fileName = "test_binary_options.json";
-var fileName = "fib.json";
+var fileName = "test_let.json";
+// var fileName = "fib.json";
 // var file = File.ReadAllText($"var/rinha/files/{fileName}");
 var file = File.ReadAllText($"../var/rinha/files/{fileName}");
 var ast = JsonConvert.DeserializeObject<dynamic>(file);

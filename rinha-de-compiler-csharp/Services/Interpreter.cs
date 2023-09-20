@@ -33,12 +33,22 @@ namespace rinha_de_compiler_csharp.Services
                     var content = Evaluate(expression.value, memory);
                     Console.WriteLine(content.ToString());
                     return null;
+                case "First":
+                    if (expression.value.kind != "Tuple")
+                        throw new Exception("Invalid argument for First function. Expected a tuple.");
+                    return Evaluate(expression.value.first, memory);
+                case "Second":
+                    if (expression.value.kind != "Tuple")
+                        throw new Exception("Invalid argument for Second function. Expected a tuple.");
+                    return Evaluate(expression.value.second, memory);
                 case "Str":
                     return expression.value.ToString();
                 case "Bool":
                     return bool.Parse(expression.value.ToString());
                 case "Int":
                     return int.Parse(expression.value.ToString());
+                case "Tuple":
+                    return (Evaluate(expression.first, memory), Evaluate(expression.second, memory));
                 case "If":
                     if (Evaluate(expression.condition, memory)) 
                         return Evaluate(expression.then, memory);
