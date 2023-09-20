@@ -3,14 +3,15 @@ using rinha_de_compiler_csharp.Services;
 using System.Diagnostics;
 
 Console.WriteLine("Hello, Rinheiros!");
+var fileName = "source.json";
+if (args.Length > 0 && args[0] is not null)
+    fileName = args[0];
 
 var stopWatch = new Stopwatch();
 stopWatch.Start();
 
-var fileName = "test_binary_options.json";
-// var fileName = "fib.json";
-// var file = File.ReadAllText($"var/rinha/files/{fileName}");
-var file = File.ReadAllText($"../var/rinha/files/{fileName}");
+var file = File.ReadAllText($"var/rinha/{fileName}");
+// var file = File.ReadAllText($"../var/rinha/{fileName}");
 var ast = JsonConvert.DeserializeObject<dynamic>(file);
 if (ast is null)
 {

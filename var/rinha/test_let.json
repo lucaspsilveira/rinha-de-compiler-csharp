@@ -1,0 +1,108 @@
+{
+    "name": "var/rinha/files/teste.rinha",
+    "expression": {
+        "kind": "Let",
+        "name": {
+            "text": "a",
+            "location": {
+                "start": 4,
+                "end": 5,
+                "filename": "var/rinha/files/teste.rinha"
+            }
+        },
+        "value": {
+            "kind": "Print",
+            "value": {
+                "kind": "First",
+                "value": {
+                    "kind": "Tuple",
+                    "first": {
+                        "kind": "Int",
+                        "value": 1,
+                        "location": {
+                            "start": 21,
+                            "end": 22,
+                            "filename": "var/rinha/files/teste.rinha"
+                        }
+                    },
+                    "second": {
+                        "kind": "Int",
+                        "value": 2,
+                        "location": {
+                            "start": 24,
+                            "end": 25,
+                            "filename": "var/rinha/files/teste.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 20,
+                        "end": 26,
+                        "filename": "var/rinha/files/teste.rinha"
+                    }
+                },
+                "location": {
+                    "start": 14,
+                    "end": 27,
+                    "filename": "var/rinha/files/teste.rinha"
+                }
+            },
+            "location": {
+                "start": 8,
+                "end": 28,
+                "filename": "var/rinha/files/teste.rinha"
+            }
+        },
+        "next": {
+            "kind": "Print",
+            "value": {
+                "kind": "Second",
+                "value": {
+                    "kind": "Tuple",
+                    "first": {
+                        "kind": "Int",
+                        "value": 1,
+                        "location": {
+                            "start": 44,
+                            "end": 45,
+                            "filename": "var/rinha/files/teste.rinha"
+                        }
+                    },
+                    "second": {
+                        "kind": "Int",
+                        "value": 2,
+                        "location": {
+                            "start": 47,
+                            "end": 48,
+                            "filename": "var/rinha/files/teste.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 43,
+                        "end": 49,
+                        "filename": "var/rinha/files/teste.rinha"
+                    }
+                },
+                "location": {
+                    "start": 36,
+                    "end": 50,
+                    "filename": "var/rinha/files/teste.rinha"
+                }
+            },
+            "location": {
+                "start": 30,
+                "end": 51,
+                "filename": "var/rinha/files/teste.rinha"
+            }
+        },
+        "location": {
+            "start": 0,
+            "end": 51,
+            "filename": "var/rinha/files/teste.rinha"
+        }
+    },
+    "location": {
+        "start": 0,
+        "end": 51,
+        "filename": "var/rinha/files/teste.rinha"
+    }
+}
