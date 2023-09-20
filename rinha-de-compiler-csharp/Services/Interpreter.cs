@@ -88,7 +88,7 @@ namespace rinha_de_compiler_csharp.Services
             }
 
             if (expression.next is not null)
-                Evaluate(expression.next, memory);
+                return Evaluate(expression.next, memory);
 
             return "";
         }
