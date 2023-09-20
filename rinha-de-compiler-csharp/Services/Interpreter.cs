@@ -31,8 +31,11 @@ namespace rinha_de_compiler_csharp.Services
                     return Evaluate(functionCallee, localMemory);
                 case "Print":
                     var content = Evaluate(expression.value, memory);
-                    Console.WriteLine(content.ToString());
-                    return null;
+                    if (content is bool)
+                        Console.WriteLine(content.ToString().ToLower());
+                    else
+                        Console.WriteLine(content.ToString());
+                    return content;
                 case "First":
                     if (expression.value.kind != "Tuple")
                         throw new Exception("Invalid argument for First function. Expected a tuple.");
@@ -59,6 +62,11 @@ namespace rinha_de_compiler_csharp.Services
                 case "Binary":
                     var lhs = Evaluate(expression.lhs, memory);
                     var rhs = Evaluate(expression.rhs, memory);
+
+                    if (lhs is string && rhs is bool)
+                        rhs = rhs.ToString().ToLower();
+                    if (rhs is string && lhs is bool)
+                        lhs = lhs.ToString().ToLower();
 
                     return expression.op.ToString() switch
                     {
