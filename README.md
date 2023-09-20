@@ -4,7 +4,21 @@ Este compilador/interpretador será feito em C#
 
 ## Funcionalidades implementadas
 
-1. Nenhuma (ainda) 🙂
+- Int
+- Str
+- Call
+- Binary
+- Function
+- Let
+- If
+- Print
+- First
+- Second
+- Bool
+- Tuple
+- Var
+
+Seguindo especificação da [rinha de compiladores](https://github.com/aripiprazole/rinha-de-compiler).
 
 ## Para executar
 
@@ -22,7 +36,10 @@ docker run -it --rm rinha-image
 
 ## Para testar
 
-A realizar
+Ao rodar o programa buscará pelo arquivo source.json dentro de var/rinha. Porém é possível passar um parâmetro para o programa especificando o nome do arquivo desejado. Exemplo: 
+```
+docker run -it --rm rinha-image arquivo_desejado.json
+```
 
 # Links
 
