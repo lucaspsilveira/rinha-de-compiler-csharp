@@ -9,8 +9,8 @@ stopWatch.Start();
 
 // var fileName = "test_binary_options.json";
 var fileName = "fib.json";
-var file = File.ReadAllText($"var/rinha/files/{fileName}");
-// var file = File.ReadAllText($"../var/rinha/files/{fileName}");
+// var file = File.ReadAllText($"var/rinha/files/{fileName}");
+var file = File.ReadAllText($"../var/rinha/files/{fileName}");
 var ast = JsonConvert.DeserializeObject<dynamic>(file);
 if (ast is null)
 {

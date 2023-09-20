@@ -19,11 +19,15 @@ namespace rinha_de_compiler_csharp.Services
                     var functionCallee = Evaluate(expression.callee, memory);
                     var localMemory = new Dictionary<string, dynamic>();
                     
+                    if (functionCallee.parameters.Count != expression.arguments.Count)
+                        throw new Exception($"Invalid number of parameters for function {expression.callee.text}. Expected {functionCallee.parameters.Count} but received {expression.arguments.Count}.");
+
                     foreach (var a in memory)
                         localMemory.Add(a.Key, a.Value);
 
                     for (var index = 0; index < functionCallee.parameters.Count; index++)
                         localMemory[functionCallee.parameters[index].text.ToString()] = Evaluate(expression.arguments[index], memory);
+                    
                     return Evaluate(functionCallee, localMemory);
                 case "Print":
                     var content = Evaluate(expression.value, memory);
