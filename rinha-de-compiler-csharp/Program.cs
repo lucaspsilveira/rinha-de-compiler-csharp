@@ -2,8 +2,7 @@
 using Newtonsoft.Json;
 using rinha_de_compiler_csharp.Services;
 
-Console.WriteLine("Hello, Rinheiros!");
-var fileName = "source.json";
+var fileName = "source.rinha.json";
 if (args.Length > 0 && args[0] is not null)
     fileName = args[0];
 
