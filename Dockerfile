@@ -13,5 +13,6 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /rinha-de-compiler-csharp
 COPY --from=build-env /rinha-de-compiler-csharp/out .
-COPY --from=build-env /var/rinha ./var/rinha
-ENTRYPOINT ["dotnet", "rinha-de-compiler-csharp.dll"]
+COPY --from=build-env /var/rinha /var/rinha
+
+ENTRYPOINT ["bash", "run.sh"]
