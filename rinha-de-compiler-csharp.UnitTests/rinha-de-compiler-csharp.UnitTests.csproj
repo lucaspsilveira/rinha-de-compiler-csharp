@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>rinha_de_compiler_csharp.UnitTests</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\rinha-de-compiler-csharp\rinha-de-compiler-csharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources/" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources/sum.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources/print.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources/fib.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources/combination.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+</ItemGroup>
+</Project>
