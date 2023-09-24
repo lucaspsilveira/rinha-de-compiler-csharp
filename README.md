@@ -36,9 +36,15 @@ docker run -it --rm rinha-image
 
 ## Para testar
 
-Ao rodar o programa buscará pelo arquivo source.json dentro de var/rinha. Porém é possível passar um parâmetro para o programa especificando o nome do arquivo desejado. Exemplo: 
+Ao rodar o programa buscará pelo arquivo source.rinha.json dentro de /var/rinha. Porém é possível passar um parâmetro para o programa especificando o nome do arquivo desejado (dentro de  /var/rinha). Exemplo: 
 ```
 docker run -it --rm rinha-image arquivo_desejado.json
+```
+
+Para testar passando o seu arquivo como exemplo e dentro das especificações da rinha, execute:
+* Troque <FILE_PATH> pelo o endereço do seu arquivo AST em json.
+```
+docker run -v <FILE_PATH>:/var/rinha/source.rinha.json --memory=2gb --cpus=2 rinha-image
 ```
 
 # Links
