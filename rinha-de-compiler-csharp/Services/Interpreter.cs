@@ -1,74 +1,105 @@
+using System.Dynamic;
+using rinha_de_compiler_csharp.Models;
+
 namespace rinha_de_compiler_csharp.Services 
 {
     public class Interpreter
     {
         public static void Interpret(dynamic ast) => Evaluate(ast.expression, new Dictionary<string, dynamic>());
 
-        private static dynamic? Evaluate(dynamic expression,  Dictionary<string, dynamic> memory) {
-            switch (expression.kind.ToString()) {
+        public static void InterpretAST(AST ast) => Evaluate(ast.Expression, new Dictionary<string, dynamic>());
+
+        private static dynamic? Evaluate(Term expression,  Dictionary<string, dynamic> memory) {
+            switch (expression.Kind.ToString()) {
                 case "Let":
-                    if (expression.value.kind == "Function") {
-                        memory[expression.name.text.ToString()] = expression.value;
+                    var let = expression as Let;
+                    if (let.Value.Kind == "Function") {
+                        memory[let.Name.Text] = let.Value;
                         break;
                     }
-                    memory[expression.name.text.ToString()] = Evaluate(expression.value, memory);
+                    memory[let.Name.Text.ToString()] = Evaluate(let.Value, memory);
+                    
                     break;
                 case "Function":
-                    return Evaluate(expression.value, memory);
+                    return Evaluate(((Function)expression).Value, memory);
                 case "Call":
-                    var functionCallee = Evaluate(expression.callee, memory);
+                    var call = expression as Call;
+                    var functionCallee = Evaluate(call.Callee, memory) as Function;
                     var localMemory = new Dictionary<string, dynamic>();
                     
-                    if (functionCallee.parameters.Count != expression.arguments.Count)
-                        throw new Exception($"Invalid number of parameters for function {expression.callee.text}. Expected {functionCallee.parameters.Count} but received {expression.arguments.Count}.");
+                    if (functionCallee.Parameters.Count != call.Arguments.Count)
+                        throw new Exception($"Invalid number of parameters for function.");
 
                     foreach (var a in memory)
                         localMemory.Add(a.Key, a.Value);
 
-                    for (var index = 0; index < functionCallee.parameters.Count; index++)
-                        localMemory[functionCallee.parameters[index].text.ToString()] = Evaluate(expression.arguments[index], memory);
+                    for (var index = 0; index < functionCallee.Parameters.Count; index++)
+                        localMemory[functionCallee.Parameters[index].Text.ToString()] = Evaluate(call.Arguments[index], memory);
                     
                     return Evaluate(functionCallee, localMemory);
                 case "Print":
-                    var content = Evaluate(expression.value, memory);
+                    var print = expression as Print;
+                    var content = Evaluate(print.Value, memory);
                     if (content is bool)
                         Console.WriteLine(content.ToString().ToLower());
                     else
                         Console.WriteLine(content.ToString());
                     return content;
                 case "First":
-                    if (expression.value.kind != "Tuple")
-                        throw new Exception("Invalid argument for First function. Expected a tuple.");
-                    return Evaluate(expression.value.first, memory);
+                    var first = expression as First;
+                    var res = Evaluate(first.Value, memory);
+                    try 
+                    {
+                        var tupleFirst = res as Tuple<dynamic, dynamic>;
+                    }
+                    catch(Exception ex) 
+                    {
+                        throw new Exception("Invalid argument for First function. Expected a tuple.", ex);
+                    }
+                    return res.Item1;
                 case "Second":
-                    if (expression.value.kind != "Tuple")
-                        throw new Exception("Invalid argument for Second function. Expected a tuple.");
-                    return Evaluate(expression.value.second, memory);
+                    var second = expression as Second;
+                    var resp = Evaluate(second.Value, memory);
+                    try 
+                    {
+                        var tupleSecond = resp as Tuple<dynamic, dynamic>;
+                    }
+                    catch(Exception ex) 
+                    {
+                        throw new Exception("Invalid argument for First function. Expected a tuple.", ex);
+                    }
+                    return resp.Item2;
                 case "Str":
-                    return expression.value.ToString();
+                    return ((Str)expression).Value;
                 case "Bool":
-                    return bool.Parse(expression.value.ToString());
+                    var b = expression as Bool;
+                    return b.Value;
                 case "Int":
-                    return int.Parse(expression.value.ToString());
+                    return ((Int)expression).Value;
                 case "Tuple":
-                    return (Evaluate(expression.first, memory), Evaluate(expression.second, memory));
+                    var tup = expression as TupleRinha;
+                    return new Tuple<dynamic, dynamic>(Evaluate(tup.First, memory), Evaluate(tup.Second, memory));
                 case "If":
-                    if (Evaluate(expression.condition, memory)) 
-                        return Evaluate(expression.then, memory);
+                    var ifBlock = expression as If;
+                    var result = Evaluate(ifBlock.Condition, memory);
+                    if (result) 
+                        return Evaluate(ifBlock.Then, memory);
                     else 
-                        return Evaluate(expression.otherwise, memory);
+                        return Evaluate(ifBlock.Otherwise, memory);
                 case "Var":
-                    return memory[expression.text.ToString()];
+                    var v = expression as Var;
+                    return memory[v.Text];
                 case "Binary":
-                    var lhs = Evaluate(expression.lhs, memory);
-                    var rhs = Evaluate(expression.rhs, memory);
+                    var binary = expression as Binary;
+                    var lhs = Evaluate(binary.Lhs, memory);
+                    var rhs = Evaluate(binary.Rhs, memory);
 
                     if (lhs is string && rhs is bool)
                         rhs = rhs.ToString().ToLower();
                     if (rhs is string && lhs is bool)
                         lhs = lhs.ToString().ToLower();
 
-                    return expression.op.ToString() switch
+                    return binary.Op switch
                     {
                         "Add" => lhs + rhs,
                         "Sub" => lhs - rhs,
@@ -86,9 +117,10 @@ namespace rinha_de_compiler_csharp.Services
                         _ => "",
                     };
             }
-
-            if (expression.next is not null)
-                return Evaluate(expression.next, memory);
+            
+            var exp = expression as Let;
+            if (exp.Next is not null)
+                return Evaluate(exp.Next, memory);
 
             return "";
         }

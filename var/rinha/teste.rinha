@@ -1,1 +1,7 @@
-print(true)
+let value = if (true) {
+   "true"
+} else {
+  "false"
+};
+
+print(value) // true
