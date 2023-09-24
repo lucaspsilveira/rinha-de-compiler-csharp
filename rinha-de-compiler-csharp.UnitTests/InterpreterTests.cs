@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Newtonsoft.Json;
+using rinha_de_compiler_csharp.Models;
 using rinha_de_compiler_csharp.Services;
 
 namespace rinha_de_compiler_csharp.UnitTests;
@@ -12,11 +13,12 @@ public class InterpreterTests
         using StringWriter sw = new();
         Console.SetOut(sw);
         var file = File.ReadAllText("Resources/sum.json");
-        var ast = JsonConvert.DeserializeObject<dynamic>(file);
+        var astJson = JsonConvert.DeserializeObject<dynamic>(file);
+        var ast = new AST(astJson);
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.Interpret(ast);
+        Interpreter.InterpretAST(ast);
         stopWatch.Stop();
 
         Assert.Equal("3\n", sw.ToString());
@@ -29,11 +31,12 @@ public class InterpreterTests
         using StringWriter sw = new();
         Console.SetOut(sw);
         var file = File.ReadAllText("Resources/print.json");
-        var ast = JsonConvert.DeserializeObject<dynamic>(file);
+        var astJson = JsonConvert.DeserializeObject<dynamic>(file);
+        var ast = new AST(astJson);
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.Interpret(ast);
+        Interpreter.InterpretAST(ast);
         stopWatch.Stop();
         
         Assert.Equal("Hello, Lucas!\n", sw.ToString());
@@ -46,11 +49,13 @@ public class InterpreterTests
         using StringWriter sw = new();
         Console.SetOut(sw);
         var file = File.ReadAllText("Resources/fib.json");
-        var ast = JsonConvert.DeserializeObject<dynamic>(file);
+        var astJson = JsonConvert.DeserializeObject<dynamic>(file);
+        var ast = new AST(astJson);
+        
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.Interpret(ast);
+        Interpreter.InterpretAST(ast);
         stopWatch.Stop();
 
         Assert.Equal("2\n", sw.ToString());
@@ -63,11 +68,12 @@ public class InterpreterTests
         using StringWriter sw = new();
         Console.SetOut(sw);
         var file = File.ReadAllText("Resources/combination.json");
-        var ast = JsonConvert.DeserializeObject<dynamic>(file);
+        var astJson = JsonConvert.DeserializeObject<dynamic>(file);
+        var ast = new AST(astJson);
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.Interpret(ast);
+        Interpreter.InterpretAST(ast);
         stopWatch.Stop();
         
         Assert.Equal("6\n", sw.ToString());
