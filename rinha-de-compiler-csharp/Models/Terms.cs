@@ -7,28 +7,20 @@ namespace rinha_de_compiler_csharp.Models
 
     public class Binary : Term
     {
-        public Binary(string kind, Term lhs, string binaryOp, Term rhs, Location location)
-        {
-            Kind = kind;
-            Lhs = lhs;
-            Rhs = rhs;
-            Op = binaryOp;
-            Location = location;     
-        }
         public Term Lhs { get; set; }
-        public string Op { get; set; }
         public Term Rhs { get; set; }
+        public string Op { get; set; }
     }
 
     public class Call : Term
     {
         public Term Callee { get; set; }
-        public List<Term> Arguments { get; set; }
+        public List<Term> Arguments { get; set; } = new();
     }
 
     public class Function : Term
     {
-        public List<Parameter> Parameters { get; set; }
+        public List<Parameter> Parameters { get; set; } = new();
         public Term Value { get; set; }
     }
 
@@ -44,7 +36,7 @@ namespace rinha_de_compiler_csharp.Models
     {
         public int Value { get; set; }
     }
-    
+
      public class Let : Term
     {
         public Parameter Name { get; set; }
@@ -61,12 +53,6 @@ namespace rinha_de_compiler_csharp.Models
     public class Str : Term
     {
         public string Value { get; set; }
-    }
-
-     public class Tuple : Term
-    {
-        public Tuple First { get; set; }
-        public Tuple Second { get; set; }
     }
 
     public class Var : Term

@@ -7,45 +7,45 @@ namespace rinha_de_compiler_csharp.Models
         public Term Expression { get; set; }
         public Location Location { get; set; }
 
-        public AST(dynamic dynamicNode)
+        public AST(dynamic node)
         {
-            Name = dynamicNode.name;
-            Location = new Location(dynamicNode.location);
-            Expression = Generate(dynamicNode.expression);
+            Name = node.name;
+            Location = new Location(node.location);
+            Expression = Build(node.expression);
         }
 
-        private Term Generate(dynamic dynamicNode)
+        private Term Build(dynamic node)
         {
-            string kind = dynamicNode.kind;
+            string kind = node.kind;
             switch (kind)
             {
                 case "Bool":
                     return new Bool
                     {
                         Kind = kind,
-                        Value = dynamicNode.value,
-                        Location = new Location(dynamicNode.location)
+                        Value = node.value,
+                        Location = new Location(node.location)
                     };
                 case "Int":
                     return new Int
                     {
                         Kind = kind,
-                        Value = dynamicNode.value,
-                        Location = new Location(dynamicNode.location)
+                        Value = node.value,
+                        Location = new Location(node.location)
                     };
                 case "Str":
                     return new Str
                     {
                         Kind = kind,
-                        Value = dynamicNode.value,
-                        Location = new Location(dynamicNode.location)
+                        Value = node.value,
+                        Location = new Location(node.location)
                     };
                 case "Var":
                     return new Var
                     {
                         Kind = kind,
-                        Text = dynamicNode.text,
-                        Location = new Location(dynamicNode.location)
+                        Text = node.text,
+                        Location = new Location(node.location)
                     };
                 case "Let":
                     return new Let
@@ -53,61 +53,84 @@ namespace rinha_de_compiler_csharp.Models
                         Kind = kind,
                         Name = new Parameter
                         {
-                            Text = dynamicNode.name.text,
-                            Location = new Location(dynamicNode.name.location)
+                            Text = node.name.text,
+                            Location = new Location(node.name.location)
                         },
-                        Value = Generate(dynamicNode.value),
-                        Next = Generate(dynamicNode.next),
-                        Location = new Location(dynamicNode.location)
+                        Value = Build(node.value),
+                        Next = Build(node.next),
+                        Location = new Location(node.location)
                     };
                 case "Binary":
-                    return new Binary(kind ,Generate(dynamicNode.lhs), dynamicNode.op.ToString(), Generate(dynamicNode.rhs), new Location(dynamicNode.location));
+                    return new Binary {
+                        Kind = kind, 
+                        Lhs = Build(node.lhs), 
+                        Rhs = Build(node.rhs), 
+                        Op = node.op.ToString(), 
+                        Location = new Location(node.location)
+                    };
                 case "If":
                     return new If
                     {
                         Kind = kind,
-                        Condition = Generate(dynamicNode.condition),
-                        Then = Generate(dynamicNode.then),
-                        Otherwise = Generate(dynamicNode.otherwise),
-                        Location = new Location(dynamicNode.location)
+                        Condition = Build(node.condition),
+                        Then = Build(node.then),
+                        Otherwise = Build(node.otherwise),
+                        Location = new Location(node.location)
                     };
                 case "Print":
                     return new Print
                     {
                         Kind = kind,
-                        Value = Generate(dynamicNode.value),
-                        Location = new Location(dynamicNode.location)
+                        Value = Build(node.value),
+                        Location = new Location(node.location)
+                    };
+                case "Tuple":
+                    return new TupleRinha {
+                        Kind = node.kind,
+                        Location = new Location(node.location),
+                        First = Build(node.first),
+                        Second = Build(node.second)
+                    };
+                case "First":
+                    return new First {
+                        Kind = node.kind,
+                        Location = new Location(node.location),
+                        Value = Build(node.value)
+                    };
+                case "Second":
+                    return new Second {
+                        Kind = node.kind,
+                        Location = new Location(node.location),
+                        Value = Build(node.value)
                     };
                 case "Call":
                     var callNode = new Call
                     {
                         Kind = kind,
-                        Callee = Generate(dynamicNode.callee),
-                        Arguments = new List<Term>(),
-                        Location = new Location(dynamicNode.location)
+                        Callee = Build(node.callee),
+                        Location = new Location(node.location)
                     };
-                    foreach (var argument in dynamicNode.arguments)
-                    {
-                        callNode.Arguments.Add(Generate(argument));
-                    }
+                    foreach (var argument in node.arguments)
+                        callNode.Arguments.Add(Build(argument));
+                        
                     return callNode;
                 case "Function":
-                    var functionNode = new Function
+                    var function = new Function
                     {
                         Kind = kind,
-                        Parameters = new List<Parameter>(),
-                        Value = Generate(dynamicNode.value),
-                        Location = new Location(dynamicNode.location)
+                        Value = Build(node.value),
+                        Location = new Location(node.location)
                     };
-                    foreach (var parameter in dynamicNode.parameters)
+
+                    foreach (var parameter in node.parameters)
                     {
-                        functionNode.Parameters.Add(new Parameter
+                        function.Parameters.Add(new Parameter
                         {
                             Text = parameter.text,
-                            Location = new Location(dynamicNode.location)
+                            Location = new Location(node.location)
                         });
                     }
-                    return functionNode;
+                    return function;
                 default:
                     throw new Exception($"Nó não suportado: {kind}");
             }

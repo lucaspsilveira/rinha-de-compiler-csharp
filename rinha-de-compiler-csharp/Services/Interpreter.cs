@@ -1,3 +1,4 @@
+using System.Dynamic;
 using rinha_de_compiler_csharp.Models;
 
 namespace rinha_de_compiler_csharp.Services 
@@ -46,16 +47,28 @@ namespace rinha_de_compiler_csharp.Services
                     return content;
                 case "First":
                     var first = expression as First;
-                    if (first.Value.Kind != "Tuple")
-                        throw new Exception("Invalid argument for First function. Expected a tuple.");
-                    var tuple = first.Value as TupleRinha;
-                    return Evaluate(tuple.First, memory);
+                    var res = Evaluate(first.Value, memory);
+                    try 
+                    {
+                        var tupleFirst = res as Tuple<dynamic, dynamic>;
+                    }
+                    catch(Exception ex) 
+                    {
+                        throw new Exception("Invalid argument for First function. Expected a tuple.", ex);
+                    }
+                    return res.Item1;
                 case "Second":
                     var second = expression as Second;
-                    if (second.Value.Kind != "Tuple")
-                        throw new Exception("Invalid argument for Second function. Expected a tuple.");
-                    var tuples = second.Value as TupleRinha;
-                    return Evaluate(tuples.Second, memory);
+                    var resp = Evaluate(second.Value, memory);
+                    try 
+                    {
+                        var tupleSecond = resp as Tuple<dynamic, dynamic>;
+                    }
+                    catch(Exception ex) 
+                    {
+                        throw new Exception("Invalid argument for First function. Expected a tuple.", ex);
+                    }
+                    return resp.Item2;
                 case "Str":
                     return ((Str)expression).Value;
                 case "Bool":
@@ -65,7 +78,7 @@ namespace rinha_de_compiler_csharp.Services
                     return ((Int)expression).Value;
                 case "Tuple":
                     var tup = expression as TupleRinha;
-                    return (Evaluate(tup.First, memory), Evaluate(tup.Second, memory));
+                    return new Tuple<dynamic, dynamic>(Evaluate(tup.First, memory), Evaluate(tup.Second, memory));
                 case "If":
                     var ifBlock = expression as If;
                     var result = Evaluate(ifBlock.Condition, memory);
