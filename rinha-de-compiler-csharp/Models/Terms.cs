@@ -22,6 +22,11 @@ namespace rinha_de_compiler_csharp.Models
     {
         public List<Parameter> Parameters { get; set; } = new();
         public Term Value { get; set; }
+
+        public override string ToString()
+        {
+            return "<#closure>";
+        }
     }
 
      public class If : Term

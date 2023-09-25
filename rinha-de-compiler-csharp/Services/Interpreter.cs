@@ -24,7 +24,13 @@ namespace rinha_de_compiler_csharp.Services
                     return Evaluate(((Function)expression).Value, memory);
                 case "Call":
                     var call = expression as Call;
-                    var functionCallee = Evaluate(call.Callee, memory) as Function;
+                    var functionCallee = new Function();
+
+                    if (call.Callee.Kind.Equals("Var"))
+                        functionCallee = Evaluate(call.Callee, memory) as Function;
+                    else
+                        functionCallee = call.Callee as Function;
+                    
                     var localMemory = new Dictionary<string, dynamic>();
                     
                     if (functionCallee.Parameters.Count != call.Arguments.Count)

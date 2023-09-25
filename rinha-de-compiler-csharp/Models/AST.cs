@@ -16,16 +16,9 @@ namespace rinha_de_compiler_csharp.Models
 
         private Term Build(dynamic node)
         {
-            string kind = node.kind;
+            var kind = node.kind.ToString();
             switch (kind)
             {
-                case "Bool":
-                    return new Bool
-                    {
-                        Kind = kind,
-                        Value = node.value,
-                        Location = new Location(node.location)
-                    };
                 case "Int":
                     return new Int
                     {
@@ -35,6 +28,13 @@ namespace rinha_de_compiler_csharp.Models
                     };
                 case "Str":
                     return new Str
+                    {
+                        Kind = kind,
+                        Value = node.value,
+                        Location = new Location(node.location)
+                    };
+                case "Bool":
+                    return new Bool
                     {
                         Kind = kind,
                         Value = node.value,
@@ -131,9 +131,8 @@ namespace rinha_de_compiler_csharp.Models
                         });
                     }
                     return function;
-                default:
-                    throw new Exception($"Nó não suportado: {kind}");
             }
+            return null;
         }
     }
 
