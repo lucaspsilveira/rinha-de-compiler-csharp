@@ -1,6 +1,10 @@
 let value = (1,2);
-let t1 = print(first(value));
-let t2 = print(second(value));
-let t3 = print(first((3,4)));
-let t4 = print(second((3,4)));
-print("Fim")
+let _ = print("First of (1,2) " + first(value));
+let _ = print("Second of (1,2) " + second(value));
+let _ = print("First of (3,4) " + first((3,4)));
+let _ = print("Second of (3,4) " + second((3,4)));
+let _ = print(("Print","only tuple"));
+let _ = print("Print of tuple: " + ((3, 4)));
+let _ = print("Print of tuple of tuples: " + (((1,2),(3,4))));
+let _ = print("Print of tuple of tuples with var: " + ((value, (3,4))));
+print("End")
