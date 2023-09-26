@@ -18,7 +18,8 @@ public class InterpreterTests
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.InterpretAST(ast);
+        var interpreter = new Interpreter();
+        interpreter.InterpretAST(ast);
         stopWatch.Stop();
 
         Assert.Equal("3\n", sw.ToString());
@@ -36,7 +37,8 @@ public class InterpreterTests
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.InterpretAST(ast);
+        var interpreter = new Interpreter();
+        interpreter.InterpretAST(ast);
         stopWatch.Stop();
         
         Assert.Equal("Hello, Lucas!\n", sw.ToString());
@@ -55,7 +57,8 @@ public class InterpreterTests
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.InterpretAST(ast);
+        var interpreter = new Interpreter();
+        interpreter.InterpretAST(ast);
         stopWatch.Stop();
 
         Assert.Equal("2\n", sw.ToString());
@@ -73,7 +76,8 @@ public class InterpreterTests
         var stopWatch = new Stopwatch();
         
         stopWatch.Start();
-        Interpreter.InterpretAST(ast);
+        var interpreter = new Interpreter();
+        interpreter.InterpretAST(ast);
         stopWatch.Stop();
         
         Assert.Equal("6\n", sw.ToString());

@@ -20,7 +20,9 @@ if (astJson is null)
 
 var ast = new AST(astJson);
 
-Interpreter.InterpretAST(ast);
+var interpreter = new Interpreter();
+interpreter.InterpretAST(ast);
+
 stopWatch.Stop();
 
 Console.WriteLine($"Tempo de execução: {stopWatch.ElapsedMilliseconds} milissegundos.");
