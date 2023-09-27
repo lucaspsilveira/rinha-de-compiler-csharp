@@ -66,10 +66,10 @@ namespace rinha_de_compiler_csharp.Services
         {
             var call = expression as Call;
             Function? functionCallee;
-            if (call!.Callee.Kind.Equals("Var"))
-                functionCallee = Evaluate(call.Callee, memory) as Function;
-            else
+            if (call!.Callee.Kind.Equals("Function"))
                 functionCallee = call.Callee as Function;
+            else
+                functionCallee = Evaluate(call.Callee, memory) as Function;
 
             if (functionCallee!.Parameters.Count != call.Arguments.Count)
                 throw new Exception($"Invalid number of parameters for function.");

@@ -10,4 +10,4 @@ docker run -v /Users/lucaspacheco/Documents/projetos/rinha-de-compiler-csharp/va
 docker run -v /Users/lucaspacheco/Documents/projetos/rinha-de-compiler-csharp/var/rinha/print_with_multiple_variables.json:/var/rinha/source.rinha.json --memory=2gb --cpus=2 rinha-image-with-type;
 docker run -v /Users/lucaspacheco/Documents/projetos/rinha-de-compiler-csharp/var/rinha/fib.json:/var/rinha/source.rinha.json --memory=2gb --cpus=2 rinha-image-with-type;
 docker run -v /Users/lucaspacheco/Documents/projetos/rinha-de-compiler-csharp/var/rinha/combination.json:/var/rinha/source.rinha.json --memory=2gb --cpus=2 rinha-image-with-type;
-
+docker run -v /Users/lucaspacheco/Documents/projetos/rinha-de-compiler-csharp/var/rinha/test_anon_with_anon.json:/var/rinha/source.rinha.json --memory=2gb --cpus=2 rinha-image-with-type;
