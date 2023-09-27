@@ -1,11 +1,10 @@
-using System.Dynamic;
 using System.Text;
 using rinha_de_compiler_csharp.Models;
 
 namespace rinha_de_compiler_csharp.Services 
 {
     public class Interpreter
-    {
+    {        
         private readonly Dictionary<string, dynamic> fnCache = new();
         public Interpreter() {}
 
@@ -23,47 +22,70 @@ namespace rinha_de_compiler_csharp.Services
                     
                     break;
                 case "Function":
-                    return Evaluate(((Function)expression).Value, memory);
+                     var fn = (Function)expression;
+                     fn.LocalMemory = memory;
+                     return fn;
                 case "Call":
                     var call = expression as Call;
-                    var functionCallee = new Function();
-
+                    Function? functionCallee;
                     if (call!.Callee.Kind.Equals("Var"))
                         functionCallee = Evaluate(call.Callee, memory) as Function;
                     else
                         functionCallee = call.Callee as Function;
-                    
-                    var localMemory = new Dictionary<string, dynamic>();
-                    
+
                     if (functionCallee!.Parameters.Count != call.Arguments.Count)
                         throw new Exception($"Invalid number of parameters for function.");
 
-                    foreach (var a in memory)
-                        localMemory.Add(a.Key, a.Value);
-                    
-                    var functionKey = new StringBuilder();
-                    functionKey.Append(functionCallee.Kind);
+                    var localMemory = new Dictionary<string, dynamic>();
 
+                    foreach (var a in memory)
+                        localMemory[a.Key] =  a.Value;
+                    
+                    foreach (var mem in functionCallee.LocalMemory)
+                        localMemory[mem.Key] = mem.Value;
+                    StringBuilder functionKey = new();
+                    if (functionCallee.IsPure) 
+                    {
+                        if (call!.Callee.Kind.Equals("Var"))
+                            functionKey.Append(((Var)call!.Callee).Text);
+                        functionKey.Append(functionCallee.Kind);
+                    }
                     for (var index = 0; index < functionCallee.Parameters.Count; index++)
                     {
                         var argEval = Evaluate(call.Arguments[index], memory);
                         var paramenterKey = functionCallee.Parameters[index].Text;
                         localMemory[paramenterKey] = argEval;
-                        functionKey.Append(paramenterKey +argEval);
+                        if (functionCallee.IsPure)
+                            functionKey.Append(paramenterKey + argEval);
                     }
-                    var resultKey = functionKey.ToString();
-                    if (fnCache.ContainsKey(resultKey))
-                        return fnCache[resultKey];
-                    var resultFn = Evaluate(functionCallee, localMemory);
-                    fnCache.Add(resultKey, resultFn);
-                    return resultFn;
+
+                    if (functionCallee.IsPure) 
+                    {
+                        var resultKey = functionKey.ToString();
+                        if (fnCache.ContainsKey(resultKey))
+                            return fnCache[resultKey];
+
+                        var resultFn = Evaluate(functionCallee.Value, localMemory);
+                        fnCache.Add(resultKey, resultFn);
+                        return resultFn;
+                    }
+                    else
+                    {
+                        return Evaluate(functionCallee.Value, localMemory);
+                    }
                 case "Print":
                     var print = expression as Print;
                     var content = Evaluate(print!.Value, memory);
+
+                    string output;
                     if (content is bool)
-                        Console.WriteLine(content.ToString().ToLower());
+                        output = content.ToString().ToLower();
                     else
-                        Console.WriteLine(content!.ToString());
+                        output = content!.ToString();
+                    Console.WriteLine(output);
+                    // TO DO
+                    // if (memory.TryGetValue("output", out dynamic sb))
+                    //     ((StringBuilder)sb).AppendLine(output);
                     return content;
                 case "First":
                     var first = expression as First;

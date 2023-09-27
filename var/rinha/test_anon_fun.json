@@ -1,0 +1,163 @@
+{
+    "name": "var/rinha/teste.rinha",
+    "expression": {
+        "kind": "Let",
+        "name": {
+            "text": "fix",
+            "location": {
+                "start": 4,
+                "end": 7,
+                "filename": "var/rinha/teste.rinha"
+            }
+        },
+        "value": {
+            "kind": "Function",
+            "parameters": [
+                {
+                    "text": "x",
+                    "location": {
+                        "start": 14,
+                        "end": 15,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                }
+            ],
+            "value": {
+                "kind": "Function",
+                "parameters": [],
+                "value": {
+                    "kind": "Var",
+                    "text": "x",
+                    "location": {
+                        "start": 37,
+                        "end": 38,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "location": {
+                    "start": 27,
+                    "end": 40,
+                    "filename": "var/rinha/teste.rinha"
+                }
+            },
+            "location": {
+                "start": 10,
+                "end": 42,
+                "filename": "var/rinha/teste.rinha"
+            }
+        },
+        "next": {
+            "kind": "Let",
+            "name": {
+                "text": "f2",
+                "location": {
+                    "start": 49,
+                    "end": 51,
+                    "filename": "var/rinha/teste.rinha"
+                }
+            },
+            "value": {
+                "kind": "Call",
+                "callee": {
+                    "kind": "Var",
+                    "text": "fix",
+                    "location": {
+                        "start": 54,
+                        "end": 57,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "arguments": [
+                    {
+                        "kind": "Int",
+                        "value": 1,
+                        "location": {
+                            "start": 58,
+                            "end": 59,
+                            "filename": "var/rinha/teste.rinha"
+                        }
+                    }
+                ],
+                "location": {
+                    "start": 54,
+                    "end": 60,
+                    "filename": "var/rinha/teste.rinha"
+                }
+            },
+            "next": {
+                "kind": "Let",
+                "name": {
+                    "text": "_",
+                    "location": {
+                        "start": 66,
+                        "end": 67,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "value": {
+                    "kind": "Print",
+                    "value": {
+                        "kind": "Var",
+                        "text": "f2",
+                        "location": {
+                            "start": 76,
+                            "end": 78,
+                            "filename": "var/rinha/teste.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 70,
+                        "end": 79,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "next": {
+                    "kind": "Print",
+                    "value": {
+                        "kind": "Call",
+                        "callee": {
+                            "kind": "Var",
+                            "text": "f2",
+                            "location": {
+                                "start": 87,
+                                "end": 89,
+                                "filename": "var/rinha/teste.rinha"
+                            }
+                        },
+                        "arguments": [],
+                        "location": {
+                            "start": 87,
+                            "end": 91,
+                            "filename": "var/rinha/teste.rinha"
+                        }
+                    },
+                    "location": {
+                        "start": 81,
+                        "end": 92,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "location": {
+                    "start": 62,
+                    "end": 92,
+                    "filename": "var/rinha/teste.rinha"
+                }
+            },
+            "location": {
+                "start": 45,
+                "end": 92,
+                "filename": "var/rinha/teste.rinha"
+            }
+        },
+        "location": {
+            "start": 0,
+            "end": 92,
+            "filename": "var/rinha/teste.rinha"
+        }
+    },
+    "location": {
+        "start": 0,
+        "end": 92,
+        "filename": "var/rinha/teste.rinha"
+    }
+}

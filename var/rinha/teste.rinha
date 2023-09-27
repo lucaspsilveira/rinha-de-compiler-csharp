@@ -1,15 +1,9 @@
-let fib = fn (n, k1, k2) => {
-    let alias = fib;
-    let alias2 = alias;
-    let alias3 = alias2;
-    if (n == 0) {
-        k1
-    } else {
-        if (n == 1) {
-            k2
-        } else {
-            alias3(n - 1, k2, k1 + k2)
-        }
-    }
+let fib = fn (n) => {
+  if (n < 2) {
+    print(n)
+  } else {
+    fib(n - 1) + fib(n - 2)
+  }
 };
-print(fib(10, 0, 1))
+
+print(fib(20))
