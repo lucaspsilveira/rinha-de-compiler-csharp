@@ -1,4 +1,5 @@
 ﻿
+
 namespace rinha_de_compiler_csharp.Models
 {
     public class AST
@@ -119,6 +120,7 @@ namespace rinha_de_compiler_csharp.Models
                     {
                         Kind = kind,
                         Value = Build(node.value),
+                        IsPure = IsFunctionPure(node.value),
                         Location = new Location(node.location)
                     };
 
@@ -133,6 +135,30 @@ namespace rinha_de_compiler_csharp.Models
                     return function;
             }
             return null;
+        }
+
+        private bool IsFunctionPure(dynamic node)
+        {
+            if (node.kind == "Print")
+                return false;
+            if (node.kind == "Let") 
+                return IsFunctionPure(node.value) && IsFunctionPure(node.next);
+            if (node.kind == "Binary")
+                return IsFunctionPure(node.lhs) && IsFunctionPure(node.rhs);
+            if (node.kind == "If")
+                return IsFunctionPure(node.condition) && IsFunctionPure(node.then) && IsFunctionPure(node.otherwise);
+            if (node.kind == "Tuple")
+                return IsFunctionPure(node.first) && IsFunctionPure(node.second);
+            if (node.kind == "First")
+                return IsFunctionPure(node.value);
+            if (node.kind == "Second")
+                return IsFunctionPure(node.value);
+            if (node.kind == "Call")
+                return IsFunctionPure(node.callee);
+            if (node.kind == "Function")
+                return IsFunctionPure(node.value);
+
+            return true;
         }
     }
 

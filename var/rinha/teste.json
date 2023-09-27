@@ -3,7 +3,7 @@
     "expression": {
         "kind": "Let",
         "name": {
-            "text": "sum",
+            "text": "fib",
             "location": {
                 "start": 4,
                 "end": 7,
@@ -14,286 +14,218 @@
             "kind": "Function",
             "parameters": [
                 {
-                    "text": "a",
+                    "text": "n",
                     "location": {
-                        "start": 13,
-                        "end": 14,
-                        "filename": "var/rinha/teste.rinha"
-                    }
-                },
-                {
-                    "text": "b",
-                    "location": {
-                        "start": 16,
-                        "end": 17,
+                        "start": 14,
+                        "end": 15,
                         "filename": "var/rinha/teste.rinha"
                     }
                 }
             ],
             "value": {
-                "kind": "Binary",
-                "lhs": {
-                    "kind": "Var",
-                    "text": "a",
-                    "location": {
-                        "start": 24,
-                        "end": 25,
-                        "filename": "var/rinha/teste.rinha"
-                    }
-                },
-                "op": "Add",
-                "rhs": {
-                    "kind": "Var",
-                    "text": "b",
-                    "location": {
-                        "start": 28,
-                        "end": 29,
-                        "filename": "var/rinha/teste.rinha"
-                    }
-                },
-                "location": {
-                    "start": 24,
-                    "end": 29,
-                    "filename": "var/rinha/teste.rinha"
-                }
-            },
-            "location": {
-                "start": 10,
-                "end": 31,
-                "filename": "var/rinha/teste.rinha"
-            }
-        },
-        "next": {
-            "kind": "Let",
-            "name": {
-                "text": "other_sum",
-                "location": {
-                    "start": 37,
-                    "end": 46,
-                    "filename": "var/rinha/teste.rinha"
-                }
-            },
-            "value": {
-                "kind": "Function",
-                "parameters": [
-                    {
+                "kind": "If",
+                "condition": {
+                    "kind": "Binary",
+                    "lhs": {
+                        "kind": "Var",
                         "text": "n",
                         "location": {
-                            "start": 53,
-                            "end": 54,
-                            "filename": "var/rinha/teste.rinha"
-                        }
-                    }
-                ],
-                "value": {
-                    "kind": "Call",
-                    "callee": {
-                        "kind": "Var",
-                        "text": "sum",
-                        "location": {
-                            "start": 61,
-                            "end": 64,
+                            "start": 28,
+                            "end": 29,
                             "filename": "var/rinha/teste.rinha"
                         }
                     },
-                    "arguments": [
-                        {
-                            "kind": "Var",
-                            "text": "n",
-                            "location": {
-                                "start": 65,
-                                "end": 66,
-                                "filename": "var/rinha/teste.rinha"
-                            }
-                        },
-                        {
-                            "kind": "Int",
-                            "value": 2,
-                            "location": {
-                                "start": 68,
-                                "end": 69,
-                                "filename": "var/rinha/teste.rinha"
-                            }
+                    "op": "Lt",
+                    "rhs": {
+                        "kind": "Int",
+                        "value": 2,
+                        "location": {
+                            "start": 32,
+                            "end": 33,
+                            "filename": "var/rinha/teste.rinha"
                         }
-                    ],
+                    },
                     "location": {
-                        "start": 61,
-                        "end": 70,
+                        "start": 28,
+                        "end": 33,
                         "filename": "var/rinha/teste.rinha"
                     }
                 },
-                "location": {
-                    "start": 49,
-                    "end": 72,
-                    "filename": "var/rinha/teste.rinha"
-                }
-            },
-            "next": {
-                "kind": "Print",
-                "value": {
-                    "kind": "Tuple",
-                    "first": {
-                        "kind": "Print",
-                        "value": {
-                            "kind": "Binary",
-                            "lhs": {
-                                "kind": "Str",
-                                "value": "Other sum e tuplas: ",
-                                "location": {
-                                    "start": 92,
-                                    "end": 114,
-                                    "filename": "var/rinha/teste.rinha"
-                                }
-                            },
-                            "op": "Add",
-                            "rhs": {
-                                "kind": "Call",
-                                "callee": {
-                                    "kind": "Var",
-                                    "text": "other_sum",
-                                    "location": {
-                                        "start": 117,
-                                        "end": 126,
-                                        "filename": "var/rinha/teste.rinha"
-                                    }
-                                },
-                                "arguments": [
-                                    {
-                                        "kind": "Int",
-                                        "value": 10,
-                                        "location": {
-                                            "start": 127,
-                                            "end": 129,
-                                            "filename": "var/rinha/teste.rinha"
-                                        }
-                                    }
-                                ],
-                                "location": {
-                                    "start": 117,
-                                    "end": 130,
-                                    "filename": "var/rinha/teste.rinha"
-                                }
-                            },
-                            "location": {
-                                "start": 92,
-                                "end": 130,
-                                "filename": "var/rinha/teste.rinha"
-                            }
-                        },
+                "then": {
+                    "kind": "Print",
+                    "value": {
+                        "kind": "Var",
+                        "text": "n",
                         "location": {
-                            "start": 86,
-                            "end": 131,
+                            "start": 47,
+                            "end": 48,
                             "filename": "var/rinha/teste.rinha"
                         }
                     },
-                    "second": {
+                    "location": {
+                        "start": 41,
+                        "end": 49,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "otherwise": {
+                    "kind": "Binary",
+                    "lhs": {
                         "kind": "Call",
                         "callee": {
-                            "kind": "Function",
-                            "parameters": [
-                                {
-                                    "text": "a",
-                                    "location": {
-                                        "start": 143,
-                                        "end": 144,
-                                        "filename": "var/rinha/teste.rinha"
-                                    }
-                                },
-                                {
-                                    "text": "b",
-                                    "location": {
-                                        "start": 146,
-                                        "end": 147,
-                                        "filename": "var/rinha/teste.rinha"
-                                    }
-                                }
-                            ],
-                            "value": {
-                                "kind": "Binary",
-                                "lhs": {
-                                    "kind": "Var",
-                                    "text": "a",
-                                    "location": {
-                                        "start": 154,
-                                        "end": 155,
-                                        "filename": "var/rinha/teste.rinha"
-                                    }
-                                },
-                                "op": "Sub",
-                                "rhs": {
-                                    "kind": "Var",
-                                    "text": "b",
-                                    "location": {
-                                        "start": 158,
-                                        "end": 159,
-                                        "filename": "var/rinha/teste.rinha"
-                                    }
-                                },
-                                "location": {
-                                    "start": 154,
-                                    "end": 159,
-                                    "filename": "var/rinha/teste.rinha"
-                                }
-                            },
+                            "kind": "Var",
+                            "text": "fib",
                             "location": {
-                                "start": 139,
-                                "end": 161,
+                                "start": 65,
+                                "end": 68,
                                 "filename": "var/rinha/teste.rinha"
                             }
                         },
                         "arguments": [
                             {
-                                "kind": "Int",
-                                "value": 10,
+                                "kind": "Binary",
+                                "lhs": {
+                                    "kind": "Var",
+                                    "text": "n",
+                                    "location": {
+                                        "start": 69,
+                                        "end": 70,
+                                        "filename": "var/rinha/teste.rinha"
+                                    }
+                                },
+                                "op": "Sub",
+                                "rhs": {
+                                    "kind": "Int",
+                                    "value": 1,
+                                    "location": {
+                                        "start": 73,
+                                        "end": 74,
+                                        "filename": "var/rinha/teste.rinha"
+                                    }
+                                },
                                 "location": {
-                                    "start": 163,
-                                    "end": 165,
-                                    "filename": "var/rinha/teste.rinha"
-                                }
-                            },
-                            {
-                                "kind": "Int",
-                                "value": 2,
-                                "location": {
-                                    "start": 167,
-                                    "end": 168,
+                                    "start": 69,
+                                    "end": 74,
                                     "filename": "var/rinha/teste.rinha"
                                 }
                             }
                         ],
                         "location": {
-                            "start": 138,
-                            "end": 169,
+                            "start": 65,
+                            "end": 75,
+                            "filename": "var/rinha/teste.rinha"
+                        }
+                    },
+                    "op": "Add",
+                    "rhs": {
+                        "kind": "Call",
+                        "callee": {
+                            "kind": "Var",
+                            "text": "fib",
+                            "location": {
+                                "start": 78,
+                                "end": 81,
+                                "filename": "var/rinha/teste.rinha"
+                            }
+                        },
+                        "arguments": [
+                            {
+                                "kind": "Binary",
+                                "lhs": {
+                                    "kind": "Var",
+                                    "text": "n",
+                                    "location": {
+                                        "start": 82,
+                                        "end": 83,
+                                        "filename": "var/rinha/teste.rinha"
+                                    }
+                                },
+                                "op": "Sub",
+                                "rhs": {
+                                    "kind": "Int",
+                                    "value": 2,
+                                    "location": {
+                                        "start": 86,
+                                        "end": 87,
+                                        "filename": "var/rinha/teste.rinha"
+                                    }
+                                },
+                                "location": {
+                                    "start": 82,
+                                    "end": 87,
+                                    "filename": "var/rinha/teste.rinha"
+                                }
+                            }
+                        ],
+                        "location": {
+                            "start": 78,
+                            "end": 88,
                             "filename": "var/rinha/teste.rinha"
                         }
                     },
                     "location": {
-                        "start": 80,
-                        "end": 171,
+                        "start": 65,
+                        "end": 88,
                         "filename": "var/rinha/teste.rinha"
                     }
                 },
                 "location": {
-                    "start": 74,
-                    "end": 172,
+                    "start": 24,
+                    "end": 92,
                     "filename": "var/rinha/teste.rinha"
                 }
             },
             "location": {
-                "start": 33,
-                "end": 172,
+                "start": 10,
+                "end": 94,
+                "filename": "var/rinha/teste.rinha"
+            }
+        },
+        "next": {
+            "kind": "Print",
+            "value": {
+                "kind": "Call",
+                "callee": {
+                    "kind": "Var",
+                    "text": "fib",
+                    "location": {
+                        "start": 103,
+                        "end": 106,
+                        "filename": "var/rinha/teste.rinha"
+                    }
+                },
+                "arguments": [
+                    {
+                        "kind": "Int",
+                        "value": 20,
+                        "location": {
+                            "start": 107,
+                            "end": 109,
+                            "filename": "var/rinha/teste.rinha"
+                        }
+                    }
+                ],
+                "location": {
+                    "start": 103,
+                    "end": 110,
+                    "filename": "var/rinha/teste.rinha"
+                }
+            },
+            "location": {
+                "start": 97,
+                "end": 111,
                 "filename": "var/rinha/teste.rinha"
             }
         },
         "location": {
             "start": 0,
-            "end": 172,
+            "end": 111,
             "filename": "var/rinha/teste.rinha"
         }
     },
     "location": {
         "start": 0,
-        "end": 172,
+        "end": 111,
         "filename": "var/rinha/teste.rinha"
     }
 }

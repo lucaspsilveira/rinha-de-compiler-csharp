@@ -21,7 +21,10 @@ namespace rinha_de_compiler_csharp.Models
     public class Function : Term
     {
         public List<Parameter> Parameters { get; set; } = new();
+        public Dictionary<string, dynamic> LocalMemory { get; set; } = new();
         public Term Value { get; set; }
+
+        public bool IsPure {get; set;}
 
         public override string ToString()
         {

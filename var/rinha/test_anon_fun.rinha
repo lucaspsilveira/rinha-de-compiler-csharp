@@ -1,0 +1,7 @@
+let fix = fn (x) => {
+     fn() => { x }
+};
+
+let f2 = fix(1);
+let _ = print(f2);
+print(f2())

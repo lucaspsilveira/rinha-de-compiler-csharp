@@ -1,6 +1,9 @@
-let sum = fn(a, b) => { a + b };
-let other_sum = fn (n) => { sum(n, 2) };
-print((
-    print("Other sum e tuplas: " + other_sum(10)), 
-    (fn (a, b) => { a - b })(10, 2)
-))
+let fib = fn (n) => {
+  if (n < 2) {
+    print(n)
+  } else {
+    fib(n - 1) + fib(n - 2)
+  }
+};
+
+print(fib(20))
