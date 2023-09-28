@@ -7,7 +7,7 @@ if (args.Length > 0 && args[0] is not null)
     fileName = args[0];
 
 var file = File.ReadAllText($"/var/rinha/{fileName}");
-var astJson = JsonConvert.DeserializeObject<dynamic>(file);
+var astJson = JsonConvert.DeserializeObject<dynamic>(file, settings: new JsonSerializerSettings { MaxDepth = null });
 if (astJson is null)
 {
     Console.WriteLine("Não foi possível ler o seu arquivo.");
