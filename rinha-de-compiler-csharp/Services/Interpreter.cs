@@ -172,7 +172,7 @@ namespace rinha_de_compiler_csharp.Services
         {
             var ifBlock = expression as If;
             var result = Evaluate(ifBlock!.Condition, memory);
-            if (result)
+            if (Convert.ToBoolean(result))
                 return Evaluate(ifBlock.Then, memory);
             else
                 return Evaluate(ifBlock.Otherwise, memory);

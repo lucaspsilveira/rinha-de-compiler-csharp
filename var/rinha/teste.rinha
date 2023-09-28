@@ -1,4 +1,8 @@
-let _ = print("a" + "b");
-let _ = print("a" + 1);
-let _ = print("a" + (1/0));
-_
+let _ = fn () => {
+  if (1) {
+    print(1)
+  } else {
+    print(2)
+  }
+};
+print(_())
