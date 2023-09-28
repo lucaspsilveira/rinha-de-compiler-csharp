@@ -45,8 +45,7 @@ namespace rinha_de_compiler_csharp.Services
                     var v = expression as Var;
                     return memory[v!.Text];
                 default:
-                    Console.Error.WriteLine("Nó não suportado.");
-                    return null;
+                    throw new Exception("Nó não suportado.");
             }
             
             var exp = expression as Let;
@@ -76,7 +75,7 @@ namespace rinha_de_compiler_csharp.Services
 
             if (functionCallee!.Parameters.Count != call.Arguments.Count) 
             {
-                Console.Error.WriteLine($"Erro: Número inválido de parâmetros para função.");
+                throw new Exception($"Erro: Número inválido de parâmetros para função.");
                 return null;
             }
 
@@ -161,11 +160,10 @@ namespace rinha_de_compiler_csharp.Services
                     "Gte" => lhs >= rhs,
                     "And" => lhs && rhs,
                     "Or" => lhs || rhs,
-                    _ => "Erro: Operação não suportada"
+                    _ => throw new Exception("Erro: Operação não suportada")
                 };
             } catch {
-                Console.Error.WriteLine("Erro durante operação binária");
-                return null;
+                throw new Exception("Erro durante operação binária");
             }
             
         }
@@ -190,7 +188,7 @@ namespace rinha_de_compiler_csharp.Services
             }
             catch
             {
-                Console.Error.WriteLine("Error: Invalid argument for First function. Expected a tuple.");
+                throw new Exception("Error: Invalid argument for First function. Expected a tuple.");
             }
             return resp!.Item2;
         }
@@ -205,7 +203,7 @@ namespace rinha_de_compiler_csharp.Services
             }
             catch
             {
-                Console.Error.WriteLine("Error: Invalid argument for First function. Expected a tuple.");
+                throw new Exception("Error: Invalid argument for First function. Expected a tuple.");
             }
             return res!.Item1;
         }

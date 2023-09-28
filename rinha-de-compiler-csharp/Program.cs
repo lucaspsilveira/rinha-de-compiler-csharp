@@ -20,7 +20,7 @@ try
 {
     interpreter.InterpretAST(ast);
 }
-catch 
+catch (Exception ex)
 {
-    Console.Error.WriteLine("Erro ao executar .rinha.json");
+    Console.Error.WriteLine($"Erro ao executar .rinha.json: {ex.Message}");
 }
