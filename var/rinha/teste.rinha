@@ -1,5 +1,4 @@
-print((fn(a) => {
-  fn(b) => {
-    a+b
-  }
-})(1)(2))
+let _ = print("a" + "b");
+let _ = print("a" + 1);
+let _ = print("a" + (1/0));
+_

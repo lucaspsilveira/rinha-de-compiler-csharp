@@ -16,4 +16,11 @@ if (astJson is null)
 
 var ast = new AST(astJson);
 var interpreter = new Interpreter();
-interpreter.InterpretAST(ast);
+try 
+{
+    interpreter.InterpretAST(ast);
+}
+catch 
+{
+    Console.Error.WriteLine("Erro ao executar .rinha.json");
+}

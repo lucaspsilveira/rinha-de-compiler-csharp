@@ -139,24 +139,29 @@ namespace rinha_de_compiler_csharp.Services
                 rhs = rhs.ToString().ToLower();
             if (rhs is string && lhs is bool)
                 lhs = lhs.ToString().ToLower();
-
-            return binary.Op switch
-            {
-                "Add" => lhs + rhs,
-                "Sub" => lhs - rhs,
-                "Mul" => lhs * rhs,
-                "Div" => lhs / rhs,
-                "Rem" => lhs % rhs,
-                "Eq" => lhs == rhs,
-                "Neq" => lhs != rhs,
-                "Lt" => lhs < rhs,
-                "Gt" => lhs > rhs,
-                "Lte" => lhs <= rhs,
-                "Gte" => lhs >= rhs,
-                "And" => lhs && rhs,
-                "Or" => lhs || rhs,
-                _ => "",
-            };
+            try {
+                return binary.Op switch
+                {
+                    "Add" => lhs + rhs,
+                    "Sub" => lhs - rhs,
+                    "Mul" => lhs * rhs,
+                    "Div" => lhs / rhs,
+                    "Rem" => lhs % rhs,
+                    "Eq" => lhs == rhs,
+                    "Neq" => lhs != rhs,
+                    "Lt" => lhs < rhs,
+                    "Gt" => lhs > rhs,
+                    "Lte" => lhs <= rhs,
+                    "Gte" => lhs >= rhs,
+                    "And" => lhs && rhs,
+                    "Or" => lhs || rhs,
+                    _ => "Operação não suportada",
+                };
+            } catch {
+                Console.Error.WriteLine("Erro durante operação binária");
+                return null;
+            }
+            
         }
 
         private dynamic InterpretIf(Term expression, Dictionary<string, dynamic> memory)
@@ -177,9 +182,9 @@ namespace rinha_de_compiler_csharp.Services
             {
                 var tupleSecond = resp as Tuple<dynamic, dynamic>;
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Exception("Invalid argument for First function. Expected a tuple.", ex);
+                Console.Error.WriteLine("Invalid argument for First function. Expected a tuple.");
             }
             return resp!.Item2;
         }
@@ -192,9 +197,9 @@ namespace rinha_de_compiler_csharp.Services
             {
                 var tupleFirst = res as Tuple<dynamic, dynamic>;
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Exception("Invalid argument for First function. Expected a tuple.", ex);
+                Console.Error.WriteLine("Invalid argument for First function. Expected a tuple.");
             }
             return res!.Item1;
         }
