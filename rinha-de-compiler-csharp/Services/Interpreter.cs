@@ -44,6 +44,9 @@ namespace rinha_de_compiler_csharp.Services
                 case "Var":
                     var v = expression as Var;
                     return memory[v!.Text];
+                default:
+                    Console.Error.WriteLine("Nó não suportado.");
+                    return null;
             }
             
             var exp = expression as Let;
@@ -59,7 +62,7 @@ namespace rinha_de_compiler_csharp.Services
             if (let!.Value.Kind == "Function")
                 memory[let.Name.Text] = let.Value;
             else
-                memory[let.Name.Text.ToString()] = Evaluate(let.Value, memory)!;
+                memory[let.Name.Text] = Evaluate(let.Value, memory)!;
         }
 
         private dynamic InterpretCall(Term expression, Dictionary<string, dynamic> memory)
@@ -71,8 +74,11 @@ namespace rinha_de_compiler_csharp.Services
             else
                 functionCallee = Evaluate(call.Callee, memory) as Function;
 
-            if (functionCallee!.Parameters.Count != call.Arguments.Count)
-                throw new Exception($"Invalid number of parameters for function.");
+            if (functionCallee!.Parameters.Count != call.Arguments.Count) 
+            {
+                Console.Error.WriteLine($"Erro: Número inválido de parâmetros para função.");
+                return null;
+            }
 
             Dictionary<string, dynamic> localMemory = BuildLocalMemory(memory, functionCallee);
 
@@ -155,7 +161,7 @@ namespace rinha_de_compiler_csharp.Services
                     "Gte" => lhs >= rhs,
                     "And" => lhs && rhs,
                     "Or" => lhs || rhs,
-                    _ => "Operação não suportada",
+                    _ => "Erro: Operação não suportada"
                 };
             } catch {
                 Console.Error.WriteLine("Erro durante operação binária");
@@ -184,7 +190,7 @@ namespace rinha_de_compiler_csharp.Services
             }
             catch
             {
-                Console.Error.WriteLine("Invalid argument for First function. Expected a tuple.");
+                Console.Error.WriteLine("Error: Invalid argument for First function. Expected a tuple.");
             }
             return resp!.Item2;
         }
@@ -199,7 +205,7 @@ namespace rinha_de_compiler_csharp.Services
             }
             catch
             {
-                Console.Error.WriteLine("Invalid argument for First function. Expected a tuple.");
+                Console.Error.WriteLine("Error: Invalid argument for First function. Expected a tuple.");
             }
             return res!.Item1;
         }
