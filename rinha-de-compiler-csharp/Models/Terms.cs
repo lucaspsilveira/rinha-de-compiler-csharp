@@ -24,6 +24,8 @@ namespace rinha_de_compiler_csharp.Models
         public Dictionary<string, dynamic> LocalMemory { get; set; } = new();
         public Term Value { get; set; }
 
+        public string Id { get; set; }
+
         public bool IsPure {get; set;}
 
         public override string ToString()
