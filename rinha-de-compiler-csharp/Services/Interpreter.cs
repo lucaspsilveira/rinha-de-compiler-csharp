@@ -5,6 +5,7 @@ namespace rinha_de_compiler_csharp.Services
 {
     public class Interpreter
     {        
+        private bool isMemoOn = true;
         private readonly Dictionary<string, dynamic> fnCache = new();
         public Interpreter() {}
 
@@ -74,14 +75,12 @@ namespace rinha_de_compiler_csharp.Services
                 functionCallee = Evaluate(call.Callee, memory) as Function;
 
             if (functionCallee!.Parameters.Count != call.Arguments.Count) 
-            {
                 throw new Exception($"Erro: Número inválido de parâmetros para função.");
-                return null;
-            }
 
-            Dictionary<string, dynamic> localMemory = BuildLocalMemory(memory, functionCallee);
-
-            if (functionCallee.IsPure)
+            var localMemory = BuildLocalMemory(memory, functionCallee);
+            if (isMemoOn && call.Arguments.Any(x => typeof(Function) == x.GetType() && ((Function)x).Parameters.Count == 0))
+                isMemoOn = false;
+            if (isMemoOn && functionCallee.IsPure)
                 return InterpretPureFunction(call, functionCallee, memory, localMemory);
             return InterpretInpureFunction(call, functionCallee, memory, localMemory);
         }
@@ -115,14 +114,20 @@ namespace rinha_de_compiler_csharp.Services
             StringBuilder functionKey = new();
             if (call!.Callee.Kind.Equals("Var"))
                 functionKey.Append(((Var)call!.Callee).Text);
-            functionKey.Append(functionCallee.Kind);
+                
+            functionKey.Append(functionCallee.Id);
             
             for (var index = 0; index < functionCallee.Parameters.Count; index++)
             {
                 var argEval = Evaluate(call.Arguments[index], memory);
                 var paramenterKey = functionCallee.Parameters[index].Text;
                 localMemory[paramenterKey] = argEval;
-                functionKey.Append(paramenterKey + argEval);
+                if (argEval?.GetType() == typeof(Function)) {
+                    var argFn = (Function)argEval;
+                    functionKey.Append(paramenterKey + argFn.Id);
+                }
+                else
+                    functionKey.Append(paramenterKey + argEval);
             }
 
             var resultKey = functionKey.ToString();

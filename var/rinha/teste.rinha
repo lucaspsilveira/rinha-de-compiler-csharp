@@ -1,8 +1,9 @@
-let _ = fn () => {
-  if (1) {
-    print(1)
-  } else {
-    print(2)
-  }
+let fib = fn (n) => {
+    let v = n();
+    if (v < 2) {
+        v
+    } else {
+        fib(fn () => v - 1) + fib(fn () => v - 2)
+    }
 };
-print(_())
+print(fib(fn () => 10))

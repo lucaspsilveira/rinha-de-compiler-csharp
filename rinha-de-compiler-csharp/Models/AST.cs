@@ -119,6 +119,7 @@ namespace rinha_de_compiler_csharp.Models
                     var function = new Function
                     {
                         Kind = kind,
+                        Id = Guid.NewGuid().ToString(),
                         Value = Build(node.value),
                         IsPure = IsFunctionPure(node.value),
                         Location = new Location(node.location)
